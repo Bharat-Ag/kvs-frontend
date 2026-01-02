@@ -1,0 +1,79 @@
+:root {
+    --primary-clr: #0096FF;
+    --black-clr: #222;
+    --clr-444: #444;
+    --clr-999: #999;
+    --clr-666: #666;
+    --font-mont: "Montserrat", sans-serif;
+    --font-inter: "Inter", sans-serif;
+
+}
+
+* {
+    font-family: "Poppins", sans-serif;
+}
+
+html,
+body {
+    position: relative;
+    background: #fff;
+    color: var(--black-clr);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+    margin-bottom: 0;
+}
+
+ul {
+    margin-bottom: 0px;
+    padding: 0px;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+button {
+    padding-inline: 20px;
+}
+
+button,
+textarea,
+input {
+    border: 0;
+    resize: none;
+    outline: none;
+    background: transparent;
+}
+
+.light-blue {
+    background: #E8F4FF;
+}
+
+.dull-blue {
+    background: #F2F9FF;
+}
+
+.flex-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rounded-full {
+    border-radius: 100px;
+}
+
+img {
+    width: auto;
+}
