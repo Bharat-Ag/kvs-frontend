@@ -24,6 +24,8 @@
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    
+    <link rel="stylesheet" href="css/simpleLightbox.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -47,7 +49,7 @@
     </section>
 
     <!-- --- ABOUT --- -->
-     <section class="about paddB">
+     <section class="about-main paddB">
         <div class="inner-area">
             <div class="container">
                 <div class="about-wrapper">
@@ -60,9 +62,9 @@
                         </div>
                     </div>
                     <div class="about-content">
-                        <span class="cmn-title">About us</span>
+                        <span class="mini-title">About us</span>
 
-                        <h2 class="cmn-heading">
+                        <h2 class="sec-heading">
                         Kavishree Exim is a trusted import–export company committed
                         </h2>
 
@@ -85,10 +87,10 @@
     </section>
 
     <!-- --- EXPERTISE --- -->
-    <section class="about paddB">
+    <section class="expertise paddB">
         <div class="inner-area">
             <div class="container">
-                <h2 class="cmn-heading center">Our Expertise</h2>
+                <h2 class="sec-heading center">Our Expertise</h2>
                 <div class="expertise-wrap">
                    <div class="expertise-item">
                         <div class="expertise-head">
@@ -156,11 +158,29 @@
     </section>
 
     <!-- --- CERTIFICATE --- -->
-     <div class="certificate paddB">
+    <section class="certificate paddB">
+        <div class="inner-area">
+            <div class="container">
+            <h2 class="sec-heading center">Our Certificates</h2>
 
-     </div>
+            <div class="certi-wrapper gallery">
+                
+                <a href="https://placehold.co/1024x600" class="certi-block" title="Certificate 1">
+                <img src="https://placehold.co/370x424" alt="Certificate 1">
+                </a>
 
+                <a href="https://placehold.co/1024x600" class="certi-block" title="Certificate 2">
+                <img src="https://placehold.co/370x424" alt="Certificate 2">
+                </a>
 
+                <a href="https://placehold.co/1024x600" class="certi-block" title="Certificate 3">
+                <img src="https://placehold.co/370x424" alt="Certificate 3">
+                </a>
+
+            </div>
+            </div>
+        </div>
+    </section>
 
     <!-- --- CTA --- -->
     <section class="cta">
@@ -244,6 +264,7 @@
     </footer>
 
     <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/simpleLightbox.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/swiper-bundle.min.js"></script>
     <script src="js/custom.js"></script>
@@ -254,7 +275,16 @@
             $(this).animate({ width:value+"%" },1200);
         });
         });
-</script>
+        $(document).ready(function () {
+            $('.gallery a').simpleLightbox({
+                closeOnOverlayClick: true,
+                closeOnEscapeKey: true,
+                showCaptions: true,
+                captionAttribute: 'title'
+            });
+        });
+    </script>
+
 
 </body>
 
