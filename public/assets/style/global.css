@@ -771,4 +771,17 @@ nav.nav-scrolled {
 }
 .testimonial-swiper .swiper-pagination .swiper-pagination-bullet-active {
   background: #cc0001;
+}
+
+.input-style {
+  background: "#F2F2F2";
+  height: 50px;
+  border-radius: 10px;
+}
+
+.label-style {
+  font-size: 16px;
+  color: #666666;
+  margin-bottom: 10px;
+  display: "block";
 }/*# sourceMappingURL=global.css.map */
