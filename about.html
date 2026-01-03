@@ -27,10 +27,133 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sub-style.css">
 </head>
 
 <body>
+    <!-- --- BANNER --- -->
+    <section class="about-hero mb-100">
+        <div class="banner-blk">
+            <div class="banner">
+                <span class="banner-overlay"></span>
+                <img src="./assets/images/about/about-bg.jpg"/>
+            </div>
 
+            <div class="header-info">
+                <h1 class="h-title">About Us</h1>
+                <p class="h-info"><a href="#">Home</a> <i class="fa-solid fa-chevron-right"></i> <span>About Us</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- ABOUT --- -->
+     <section class="about mb-100">
+        <div class="inner-area">
+            <div class="container">
+                <div class="about-wrapper">
+                    <div class="about-images">
+                        <div class="img img-top">
+                        <img src="/assets/images/about/about-main1.jpg" alt="Air Cargo">
+                        </div>
+                        <div class="img img-bottom">
+                        <img src="/assets/images/about/about-main2.jpg" alt="Sea Cargo">
+                        </div>
+                    </div>
+                    <div class="about-content">
+                        <span class="cmn-title">About us</span>
+
+                        <h2 class="cmn-heading">
+                        Kavishree Exim is a trusted import–export company committed
+                        </h2>
+
+                        <p class="cmn-text">
+                        to delivering reliable, efficient, and compliant global trade solutions.
+                        With a strong focus on quality and customer satisfaction, we help businesses
+                        connect with international markets through seamless logistics and professional
+                        trade support.
+                        </p>
+
+                        <p class="cmn-text">
+                        Our operations are built on transparency, precision, and a deep understanding
+                        of global trade requirements. From sourcing and documentation to shipment
+                        execution, Kavishree Exim ensures every process is handled with care and expertise.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- EXPERTISE --- -->
+    <section class="about mb-100">
+        <div class="inner-area">
+            <div class="container">
+                <h2 class="cmn-heading center">Our Expertise</h2>
+                <div class="expertise-wrap">
+                   <div class="expertise-item">
+                        <div class="expertise-head">
+                            <span class="exp-name">Ocean Logistics</span>
+                            <span class="exp-percent">100%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-progress="100"></div>
+                        </div>
+                    </div>
+
+                    <div class="expertise-item">
+                        <div class="expertise-head">
+                            <span class="exp-name">Export Solutions</span>
+                            <span class="exp-percent">90%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-progress="90"></div>
+                        </div>
+                    </div>
+
+                    <div class="expertise-item">
+                        <div class="expertise-head">
+                            <span class="exp-name">Air Cargo</span>
+                            <span class="exp-percent">80%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-progress="80"></div>
+                        </div>
+                    </div>
+
+                    <div class="expertise-item">
+                        <div class="expertise-head">
+                            <span class="exp-name">Import Services</span>
+                            <span class="exp-percent">70%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-progress="70"></div>
+                        </div>
+                    </div>
+
+                    <div class="expertise-item">
+                        <div class="expertise-head">
+                            <span class="exp-name">Road Freight</span>
+                            <span class="exp-percent">60%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-progress="60"></div>
+                        </div>
+                    </div>
+
+                    <div class="expertise-item">
+                        <div class="expertise-head">
+                            <span class="exp-name">Trade Documentation</span>
+                            <span class="exp-percent">50%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-progress="50"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div> 
+        </div>
+    </section>
 
 
     <!-- --- CTA --- -->
@@ -118,6 +241,14 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/swiper-bundle.min.js"></script>
     <script src="js/custom.js"></script>
+    <script>
+        $(window).on("load",function(){
+        $(".progress-fill").each(function(){
+            const value=$(this).data("progress");
+            $(this).animate({ width:value+"%" },1200);
+        });
+        });
+</script>
 
 </body>
 
