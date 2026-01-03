@@ -5,12 +5,12 @@ import PageTitle from "@/app/components/PageTitle";
 import "../../../../public/assets/style/about.css";
 import Image from "next/image";
 import { Image as AntImage } from "antd";
-import { assets, BlueArrow } from "../../../../public/assets/svgs/svg";
+import { assets} from "../../../../public/assets/svgs/svg";
 import Link from "next/link";
 import CTA from "@/app/components/CTA";
-
 import {expertiseData} from '../../arrayData'
 import Testimonials from "@/app/components/Testimonials";
+import Banner from "@/app/components/Banner";
 
 export default function About() {
   const sectionRef = useRef(null);
@@ -85,22 +85,7 @@ export default function About() {
     <>
       <PageTitle title={"About"} />
 
-      <section className="about-hero paddB">
-        <div className="banner-blk">
-          <div className="banner">
-            <span className="banner-overlay"></span>
-            <Image src={assets.aboutHero} alt="Banner image" />
-          </div>
-
-          <div className="header-info">
-            <h1 className="h-title">About Us</h1>
-            <p className="h-info">
-              <Link href="/">Home</Link>  <BlueArrow />
-              <span>About Us</span>
-            </p>
-          </div>
-        </div>
-      </section>
+      <Banner title="About Us" image={assets.aboutHero}/>
 
       <section className="about-main paddB">
         <div className="inner-area">
