@@ -26,10 +26,17 @@ import Client4 from "../images/client4.png"
 import Client5 from "../images/client5.png"
 import TestimImg from "../images/home/TESTIMONALS.jpg"
 
-
 import aboutHero from "../images/about/about-bg.jpg";
 import aboutMain1 from "../images/about/about-main1.jpg";
 import aboutMain2 from "../images/about/about-main2.jpg";
+import aboutImportExport from "../images/about/import-export.jpg";
+import testimonialImage1 from "../images/testimonial1.jpg";
+import Avatar1 from "../images/client1.png";
+import Avatar2 from "../images/client2.png";
+import Avatar3 from "../images/client3.png";
+import Avatar4 from "../images/client4.png";
+import Avatar5 from "../images/client5.png";
+import DoubleQuote from "../images/quote-icon.svg"
 
 export const DDIcon = () => {
   return (
@@ -92,6 +99,6 @@ export const PlayIcon = ()=>{
 
 
 export const assets = {
-Client1,Client2,Client3,Client4,Client5, FAQHero,FeatP1,FeatP2,FeatP3,OutlineArrow,TestimImg, siteLogo,bigLogo,facebookIcon,twitterIcon,instagramIcon,linkDnIcon,homeCtaBanner,aboutHero,aboutMain1,aboutMain2,
-  sliderImg1,sliderImg2,sliderImg3,TradeIcon,AirCargoIcon,ExportIcon,OceanIcon,RoadIcon,ImportIcon
+Client1,Client2,Client3,Client4,Client5, FAQHero,FeatP1,FeatP2,FeatP3,OutlineArrow,TestimImg,TradeIcon,AirCargoIcon,ExportIcon,OceanIcon,RoadIcon,ImportIcon,siteLogo, bigLogo, facebookIcon, twitterIcon, instagramIcon, linkDnIcon, homeCtaBanner, aboutHero, aboutMain1, aboutMain2, sliderImg1, sliderImg2, sliderImg3, aboutImportExport, testimonialImage1, Avatar1, Avatar2, Avatar3, Avatar4, Avatar5,
+  DoubleQuote
 };

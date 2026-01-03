@@ -19,7 +19,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { FaqExport, FaqGeneral, FaqImport, FeaturedProd, OurServicesData, ProductList, Testimonials, } from "./arrayData";
+import { FaqExport, FaqGeneral, FaqImport, FeaturedProd, OurServicesData, ProductList, Testimonials, testimonialsData, } from "./arrayData";
 import VdoPlacholder from "../../public/assets/images/home/video-img.jpg";
 import { PauseOutlined } from "@ant-design/icons";
 
@@ -194,23 +194,24 @@ export default function Home() {
                     <Swiper
                       modules={[Autoplay]}
                       loop={true}
-                      //   autoplay={{
-                      //     delay: 2500,
-                      //     disableOnInteraction: false,
-                      //   }}
+                        autoplay={{
+                          delay: 2500,
+                          disableOnInteraction: false,
+                        }}
                       slidesPerView={1}
                     >
-                      {Testimonials?.map((item, idx) => (
+                      {testimonialsData?.map((item, idx) => (
                         <SwiperSlide key={idx}>
                           <div className="testm-card position-relative">
                             <div className="bgImg">
-                              <Image src={item?.coverArt} alt={item?.name} />
+                              {/* <Image src={item?.coverArt} alt={item?.name} /> */}
+                              <Image src={assets.TestimImg} alt={item?.name} />
                             </div>
                             <div className="content-card">
                               <p className="testm-desc">{item?.message}</p>
                               <div className="infor">
                                 <div className="avts">
-                                  <Image src={item?.image} alt={item?.name} />
+                                  <Image src={item?.avatar} alt={item?.name} />
                                 </div>
                                 <div className="inf">
                                   <h4>{item?.name}</h4>

@@ -177,50 +177,50 @@ export const FaqGeneral = [
   },
 ];
 
-export const Testimonials = [
+export const testimonialsData = [
   {
     message:
       "We've trusted Kavishree Exim for years, and they never disappoint. Every shipment is handled with care, delivered on time, and supported with clear communication.",
     name: "Daniel Roberts",
     company: "XYZ Company",
-    image: assets.Client1,
-    coverArt: assets.TestimImg,
+    image: assets.testimonialImage1,
+    avatar:assets.Avatar1
   },
   {
     message:
       "Kavishree Exim manages our logistics smoothly and professionally. Their reliability and timely execution make global trade effortless for us.",
     name: "Ahmed Al-Farsi",
     company: "XYZ Company",
-    image: assets.Client2,
-    coverArt: assets.TestimImg,
+    image: assets.testimonialImage1,
+    avatar:assets.Avatar2
   },
   {
     message:
       "From documentation to final delivery, Kavishree Exim handles everything with precision. Their service consistency truly stands out.",
     name: "Michael Thompson",
     company: "XYZ Company",
-    image: assets.Client3,
-    coverArt: assets.TestimImg,
+    image: assets.testimonialImage1,
+    avatar:assets.Avatar3
   },
   {
     message:
       "Kavishree Exim provides dependable logistics support with excellent coordination. Our shipments always arrive safely and as scheduled.",
     name: "Sophie Laurent",
     company: "XYZ Company",
-    image: assets.Client4,
-    coverArt: assets.TestimImg,
+    image: assets.testimonialImage1,
+    avatar:assets.Avatar4
   },
   {
     message:
       "Working with Kavishree Exim has simplified our export operations. Clear processes, on-time delivery, and professional handling every time.",
     name: "Rajiv Mehta",
     company: "Company",
-    image: assets.Client5,
-    coverArt: assets.TestimImg,
+    image: assets.testimonialImage1,
+    avatar:assets.Avatar5
   },
 ];
 
-export const Expertise = [
+export const expertiseData = [
   { label: "Ocean Logistics", value: 100 },
   { label: "Export Solutions", value: 100 },
   { label: "Air Cargo", value: 100 },
