@@ -143,7 +143,7 @@
 .expertise-wrap{
   display:grid;
   grid-template-columns:repeat(2,1fr);
-  gap:30px 40px;
+  gap:30px;
 }
 
 .expertise-head{
@@ -156,21 +156,21 @@
   font-family:Poppins;
   font-weight:500;
   font-size:20px;
-  line-height:100%;
-  color:#333333;
+  line-height:30px;
+  color:var(--clr-333);
 }
 
 .exp-percent{
   font-family:Poppins;
   font-weight:500;
   font-size:20px;
-  line-height:100%;
+  line-height:30px;
   color:#999999;
 }
 
 .progress-bar{
   width:100%;
-  height:12px;
+  height:20px;
   background:#e6e6e6;
   border-radius:10px;
   overflow:hidden;
