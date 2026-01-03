@@ -8,6 +8,24 @@ import bigLogo from "../images/big-logo.jpg";
 import sliderImg1 from "../images/home/slider-img1.webp"
 import sliderImg2 from "../images/home/slider-img2.webp"
 import sliderImg3 from "../images/home/slider-img3.webp"
+import TradeIcon from "../images/trade-icon.svg"
+import AirCargoIcon from "../images/air-cargo-icon.svg"
+import ExportIcon from "../images/export-icon.svg"
+import OceanIcon from "../images/ocean-icon.svg"
+import RoadIcon from "../images/road-icon.svg"
+import ImportIcon from "../images/import-icon.svg"
+import FAQHero from "../images/faq/faq-bg.jpg"
+import FeatP1 from "../images/home/tiles.jpg"
+import FeatP2 from "../images/home/pp.jpg"
+import FeatP3 from "../images/home/plastic.jpg"
+import OutlineArrow from "../images/home/arrow-up.png"
+import Client1 from "../images/client1.png"
+import Client2 from "../images/client2.png"
+import Client3 from "../images/client3.png"
+import Client4 from "../images/client4.png"
+import Client5 from "../images/client5.png"
+import TestimImg from "../images/home/TESTIMONALS.jpg"
+
 
 import aboutHero from "../images/about/about-bg.jpg";
 import aboutMain1 from "../images/about/about-main1.jpg";
@@ -56,8 +74,24 @@ export const SliderArrowN = ()=>{
   )
 }
 
+export const SearchIcon = ()=>{
+  return(
+  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M16.5 16.5L12.875 12.875M14.8333 8.16667C14.8333 11.8486 11.8486 14.8333 8.16667 14.8333C4.48477 14.8333 1.5 11.8486 1.5 8.16667C1.5 4.48477 4.48477 1.5 8.16667 1.5C11.8486 1.5 14.8333 4.48477 14.8333 8.16667Z" stroke="#CC0001" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+  )
+}
+
+export const PlayIcon = ()=>{
+  return(
+    <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M14 8L0 16V0L14 8Z" fill="white"/>
+    </svg>
+  )
+}
+
 
 export const assets = {
-  siteLogo,bigLogo,facebookIcon,twitterIcon,instagramIcon,linkDnIcon,homeCtaBanner,aboutHero,aboutMain1,aboutMain2,
-sliderImg1,sliderImg2,sliderImg3,
+Client1,Client2,Client3,Client4,Client5, FAQHero,FeatP1,FeatP2,FeatP3,OutlineArrow,TestimImg, siteLogo,bigLogo,facebookIcon,twitterIcon,instagramIcon,linkDnIcon,homeCtaBanner,aboutHero,aboutMain1,aboutMain2,
+  sliderImg1,sliderImg2,sliderImg3,TradeIcon,AirCargoIcon,ExportIcon,OceanIcon,RoadIcon,ImportIcon
 };

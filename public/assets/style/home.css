@@ -57,4 +57,48 @@
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.vdo-box {
+  height: 0;
+  width: 100%;
+  padding-bottom: 45%;
+  border-radius: 40px;
+  overflow: hidden;
+}
+
+.about-sec .left-area {
+  position: relative;
+  border-radius: 40px;
+  padding: 40px;
+  height: 570px;
+  background: #cc0001;
+}
+.about-sec .left-area::before {
+  content: "";
+  position: absolute;
+  width: 351px;
+  height: 271px;
+  right: 0;
+  bottom: 0;
+  background-image: url("../images/home/map.svg");
+}
+.about-sec .floating-btn {
+  position: absolute;
+  bottom: 35px;
+  left: 35px;
+  --sz:100px;
+  border-radius: 50%;
+  height: var(--sz);
+  width: var(--sz);
+  border: 1px solid #fff;
+}
+.about-sec .floating-btn:hover img {
+  filter: brightness(0) saturate(100%) invert(31%) sepia(96%) saturate(4210%) hue-rotate(333deg) brightness(68%) contrast(170%);
+}
+.about-sec .right-area {
+  height: 570px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 40px;
 }/*# sourceMappingURL=home.css.map */

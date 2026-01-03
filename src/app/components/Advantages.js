@@ -36,7 +36,7 @@ export default function Advantages() {
 
   return (
     <>
-      <section className="faq paddT">
+      <section className="advantage paddT">
         <div className="inner-area">
           <div className="container">
             <div className="title-row text-center">

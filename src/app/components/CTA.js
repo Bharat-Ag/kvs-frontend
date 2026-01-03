@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function CTA({ title }) {
+export default function CTA({ title = "Start Your Global Trade Journey" }) {
   return (
     <>
       <section className="cta">

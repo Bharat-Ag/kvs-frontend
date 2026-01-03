@@ -262,9 +262,11 @@ nav {
   width: 100%;
   left: 0;
   padding-block: 40px;
+  transition: 0.3s ease;
 }
 nav .inner-area {
   display: flex;
+  align-items: center;
 }
 nav .branding {
   margin-right: 130px;
@@ -274,21 +276,26 @@ nav .inq-nav {
   height: 50px;
   width: 170px;
 }
+nav.nav-scrolled {
+  padding-block: 20px;
+  background: #000;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
 
-.faq-tab.ant-tabs-top > .ant-tabs-nav::before, .faq-tab.ant-tabs-top > div > .ant-tabs-nav::before {
+.faq .ant-tabs-top > .ant-tabs-nav::before, .faq .ant-tabs-top > div > .ant-tabs-nav::before {
   display: none;
 }
-.faq-tab.ant-tabs-top > .ant-tabs-nav .ant-tabs-ink-bar, .faq-tab.ant-tabs-top > div > .ant-tabs-nav .ant-tabs-ink-bar {
+.faq .ant-tabs-top > .ant-tabs-nav .ant-tabs-ink-bar, .faq .ant-tabs-top > div > .ant-tabs-nav .ant-tabs-ink-bar {
   display: none;
 }
-.faq-tab.ant-tabs .ant-tabs-tab-btn:focus:not(:focus-visible), .faq-tab.ant-tabs .ant-tabs-tab-remove:focus:not(:focus-visible), .faq-tab.ant-tabs .ant-tabs-tab-btn:active, .faq-tab.ant-tabs .ant-tabs-tab-remove:active {
+.faq .ant-tabs .ant-tabs-tab-btn:focus:not(:focus-visible), .faq .ant-tabs .ant-tabs-tab-remove:focus:not(:focus-visible), .faq.ant-tabs .ant-tabs-tab-btn:active, .faq.ant-tabs .ant-tabs-tab-remove:active {
   color: #1e1e1e;
 }
-.faq-tab.ant-tabs .ant-tabs-nav-list {
+.faq .ant-tabs .ant-tabs-nav-list {
   gap: 30px;
   width: 100%;
 }
-.faq-tab.ant-tabs .ant-tabs-tab {
+.faq .ant-tabs .ant-tabs-tab {
   flex-grow: 1;
   margin: 0;
   justify-content: center;
@@ -302,25 +309,25 @@ nav .inq-nav {
   text-align: center;
   border-radius: 0;
 }
-.faq-tab.ant-tabs .ant-tabs-tab.ant-tabs-tab-active {
+.faq .ant-tabs .ant-tabs-tab.ant-tabs-tab-active {
   background: #cc0001;
 }
-.faq-tab.ant-tabs .ant-tabs-tab-btn {
+.faq .ant-tabs .ant-tabs-tab-btn {
   width: 100%;
   height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.faq-tab.ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+.faq .ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
   color: #fff;
 }
-.faq-tab .ant-collapse {
+.faq .ant-collapse {
   border: 0;
   background: transparent;
   font-family: var(--font-poppins), sans-serif;
 }
-.faq-tab .ant-collapse.ant-collapse > .ant-collapse-item > .ant-collapse-header {
+.faq .ant-collapse.ant-collapse > .ant-collapse-item > .ant-collapse-header {
   outline: none;
   padding-inline: 0;
   font-weight: 500;
@@ -330,17 +337,17 @@ nav .inq-nav {
   padding-block: 22px;
   align-items: center;
 }
-.faq-tab .ant-collapse .ant-collapse-body {
+.faq .ant-collapse .ant-collapse-body {
   padding: 19px 0;
 }
-.faq-tab .ant-collapse .ant-collapse-body p {
+.faq .ant-collapse .ant-collapse-body p {
   font-weight: 400;
   font-size: 16px;
   padding-left: 20px;
   color: #666;
   position: relative;
 }
-.faq-tab .ant-collapse .ant-collapse-body p::before {
+.faq .ant-collapse .ant-collapse-body p::before {
   position: absolute;
   content: "";
   --sz:4px;
@@ -350,4 +357,244 @@ nav .inq-nav {
   background: #666;
   top: 9px;
   left: 7px;
+}
+
+.service-listing {
+  margin-top: 30px;
+}
+.service-listing .icns {
+  margin-bottom: 20px;
+}
+.service-listing .service-title {
+  font-weight: 500;
+  font-size: 20px;
+  color: #444;
+  margin-bottom: 20px;
+}
+.service-listing .service-desc {
+  font-size: 16px;
+  color: #666;
+  line-height: 24px;
+}
+
+.product-listing .search-box {
+  margin-block: 40px;
+}
+
+.search-box {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  max-width: 770px;
+  margin-inline: auto;
+  position: relative;
+}
+.search-box input {
+  height: 50px;
+  border: 1px solid #999;
+  border-radius: 10px;
+  display: block;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 0 40px 0 20px;
+}
+.search-box .icon {
+  position: absolute;
+  right: 17px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.product-card .icns {
+  background: #EDEDED;
+  width: 100%;
+  height: 292px;
+  border-radius: 40px;
+  overflow: hidden;
+}
+.product-card .product-title {
+  text-align: center;
+  font-weight: 500;
+  font-size: 18px;
+  color: #444;
+  padding-block: 10px;
+}
+.product-card a {
+  height: 40px;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.vdo-box video,
+.vdo-box img {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.vdo-box button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  --sz:70px;
+  height: var(--sz);
+  width: var(--sz);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000000;
+  z-index: 3;
+  color: #fff;
+  font-size: 24px;
+}
+.vdo-box button:hover {
+  background: #121212;
+}
+
+.faq-pg .sec-heading {
+  margin-bottom: 40px;
+}
+
+.feat-product-card {
+  height: 0;
+  padding-bottom: 100%;
+  border-radius: 40px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #FFFFFF;
+}
+.feat-product-card .icns {
+  position: absolute;
+  inset: 0;
+}
+.feat-product-card .icns img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.feat-product-card::before {
+  position: absolute;
+  content: "";
+  height: 127px;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  right: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+}
+.feat-product-card .featP-title {
+  font-weight: 500;
+  font-size: 20px;
+  position: absolute;
+  color: #fff;
+  bottom: 0;
+  z-index: 1;
+  width: 100%;
+  padding: 14px 20px 20px 20px;
+}
+.feat-product-card .featP-title::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: 0;
+  height: 1px;
+  background: #fff;
+  transform: translateX(-50%);
+  width: calc(100% - 40px);
+}
+
+.testim-sliderbox {
+  height: 100%;
+}
+.testim-sliderbox * {
+  height: 100%;
+}
+.testim-sliderbox .content-card {
+  position: absolute;
+  height: -moz-fit-content;
+  height: fit-content;
+  bottom: 30px;
+  background: rgba(0, 0, 0, 0.4);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  border-radius: 30px;
+  width: calc(100% - 60px);
+  padding: 30px;
+}
+.testim-sliderbox .testm-card {
+  background: #444;
+  padding: 30px;
+}
+.testim-sliderbox .testm-desc {
+  font-style: Italic;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 22px;
+}
+.testim-sliderbox .bgImg {
+  position: absolute;
+  inset: 0;
+}
+.testim-sliderbox .bgImg img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.testim-sliderbox .testm-desc {
+  font-style: Italic;
+  font-size: 16px;
+  margin-bottom: 22px;
+}
+.testim-sliderbox .infor {
+  display: flex;
+  gap: 9px;
+  color: #fff;
+  align-items: center;
+}
+.testim-sliderbox .inf h4 {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+}
+.testim-sliderbox .inf h5 {
+  font-weight: 400;
+  line-height: 24px;
+  font-size: 16px;
+}
+.testim-sliderbox .avts {
+  --sz:40px;
+  min-width: var(--sz);
+  width: var(--sz);
+  height: var(--sz);
+  border-radius: 50%;
+  overflow: hidden;
+}
+.testim-sliderbox .avts img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.nav-link:hover {
+  color: #a90001;
+}
+
+.cmn-dd-theme.ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item {
+  padding: 0;
+}
+.cmn-dd-theme.ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-title-content > a {
+  padding: 3px 13px;
+  width: 100%;
+  display: inline-flex;
+  border-radius: 4px;
+}
+.cmn-dd-theme.ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-title-content > a:hover {
+  background: #cc0001;
+  color: #fff;
 }/*# sourceMappingURL=global.css.map */

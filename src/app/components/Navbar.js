@@ -1,11 +1,13 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { assets, DDIcon } from "../../../public/assets/svgs/svg";
-
 import { Dropdown } from "antd";
-import { DownOutlined } from "@ant-design/icons";
+import { useEffect, useState } from "react";
 
 export default function Navbar() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
   const serviceLinks = [
     { title: "Ocean Logistics", href: "/ocean-logistics" },
     { title: "Air Cargo", href: "/air-cargo" },
@@ -28,8 +30,19 @@ export default function Navbar() {
     })),
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <nav>
+    <nav className={isScrolled ? "nav-scrolled" : ""}>
       <header>
         <div className="container">
           <div className="inner-area">
@@ -44,9 +57,9 @@ export default function Navbar() {
                 {navLinks.map((link, idx) => (
                   <li key={idx} className="nav-item">
                     {link.dropdown ? (
-                      <Dropdown menu={servicesMenu} trigger={["click"]}>
+                      <Dropdown menu={servicesMenu} trigger={["click"]} rootClassName="cmn-dd-theme">
                         <span className="nav-link fw-semibold text-white cursor-pointer">
-                          {link.title}  <DDIcon />
+                          {link.title} <DDIcon />
                         </span>
                       </Dropdown>
                     ) : (

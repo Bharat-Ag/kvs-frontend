@@ -3,6 +3,8 @@ import CTA from "./components/CTA";
 import Image from "next/image";
 import {
   assets,
+  PlayIcon,
+  SearchIcon,
   SliderArrowN,
   SliderArrowP,
 } from "../../public/assets/svgs/svg";
@@ -16,96 +18,17 @@ import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { FaqExport, FaqGeneral, FaqImport, FeaturedProd, OurServicesData, ProductList, Testimonials, } from "./arrayData";
+import VdoPlacholder from "../../public/assets/images/home/video-img.jpg";
+import { PauseOutlined } from "@ant-design/icons";
 
 export default function Home() {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
   const [swiperInstance, setSwiperInstance] = useState(null);
-
-  const importFaqs = [
-    {
-      question: "What import services does Kavishree Exim provide?",
-      answer:
-        "Kavishree Exim offers end-to-end import services including product sourcing, logistics coordination, customs clearance, and final delivery.",
-    },
-    {
-      question: "How long does the import process usually take?",
-      answer:
-        "Import timelines depend on the origin country and mode of transport, generally ranging from 7 to 30 days.",
-    },
-    {
-      question: "Does Kavishree Exim handle customs clearance for imports?",
-      answer:
-        "Yes, Kavishree Exim manages all required customs documentation and clearance procedures for smooth imports.",
-    },
-    {
-      question: "Can Kavishree Exim source products on request?",
-      answer:
-        "Yes, we support custom product sourcing based on client requirements and current market availability.",
-    },
-    {
-      question: "Is pricing shared before confirming an import order?",
-      answer:
-        "Yes, complete pricing details are shared after evaluating product specifications and order quantities.",
-    },
-  ];
-
-  const exportFaqs = [
-    {
-      question: "What types of products does Kavishree Exim export?",
-      answer:
-        "Kavishree Exim exports a wide range of Indian products that meet international quality and compliance standards.",
-    },
-    {
-      question: "Which logistics modes are available for exports?",
-      answer:
-        "We provide export logistics through sea freight, air cargo, and road transport based on destination and urgency.",
-    },
-    {
-      question: "Does Kavishree Exim manage export documentation?",
-      answer:
-        "Yes, we handle invoices, packing lists, HS codes, and all mandatory export documentation.",
-    },
-    {
-      question: "Is custom packaging available for export orders?",
-      answer:
-        "Yes, customized packaging options are available depending on product type, compliance needs, and order volume.",
-    },
-    {
-      question: "How can international buyers place an export inquiry?",
-      answer:
-        "International buyers can submit inquiries through our website contact form or connect directly with our export support team.",
-    },
-  ];
-
-  const generalFaqs = [
-    {
-      question: "Does Kavishree Exim provide door-to-door delivery?",
-      answer:
-        "Yes, door-to-door delivery is available for selected destinations and shipment types.",
-    },
-    {
-      question: "Can shipments be tracked after dispatch?",
-      answer:
-        "Yes, shipment tracking details are shared once the cargo is dispatched.",
-    },
-    {
-      question: "Are sample shipments available before bulk orders?",
-      answer:
-        "Yes, sample shipments can be arranged based on product availability and feasibility.",
-    },
-    {
-      question: "What payment methods are accepted?",
-      answer:
-        "We accept standard international trade payment methods such as bank transfers and letters of credit.",
-    },
-    {
-      question: "Does Kavishree Exim support long-term business partnerships?",
-      answer:
-        "Yes, we actively support long-term partnerships with distributors, resellers, and repeat buyers worldwide.",
-    },
-  ];
+  const [searchProduct, setSearchProduct] = useState("");
+  const [playVdo, setPlayVdo] = useState(false);
 
   const sliderData = [
     {
@@ -149,6 +72,12 @@ export default function Home() {
     }
   }, [swiperInstance]);
 
+  const filteredProducts = useMemo(() => {
+    return ProductList.filter((item) =>
+      item.title.toLowerCase().includes(searchProduct.toLowerCase())
+    );
+  }, [searchProduct]);
+
   return (
     <>
       <PageTitle
@@ -159,10 +88,14 @@ export default function Home() {
         <div className="inner-area position-relative">
           <div className="custom-slider-btns">
             <div ref={prevRef} className="custom-swiper-prev">
-              <button><SliderArrowP /></button>
+              <button>
+                <SliderArrowP />
+              </button>
             </div>
             <div ref={nextRef} className="custom-swiper-next">
-              <button><SliderArrowN /></button>
+              <button>
+                <SliderArrowN />
+              </button>
             </div>
           </div>
           <Swiper
@@ -178,13 +111,7 @@ export default function Home() {
             {sliderData.map((slide, idx) => (
               <SwiperSlide key={idx}>
                 <div className="inr-slid">
-                  <Image
-                    src={slide.image}
-                    alt={slide.title}
-                    className="slider-image"
-                    width={1460}
-                    height={700}
-                  />
+                  <Image src={slide.image} alt={''} className="slider-image" width={1460} height={700}/>
                   <div className="content position-relative">
                     <h2 className="sec-heading">{slide.title}</h2>
                     <p className="hero-para">{slide.description}</p>
@@ -196,6 +123,246 @@ export default function Home() {
               </SwiperSlide>
             ))}
           </Swiper>
+        </div>
+      </section>
+
+      <section className="product-sec">
+        <div className="inner-area">
+          <div className="container">
+            <div className="ft-prod-listing">
+              <Swiper
+                modules={[Autoplay]}
+                loop={true}
+                autoplay={{
+                  delay: 3000,
+                  disableOnInteraction: false,
+                }}
+                spaceBetween={30}
+                breakpoints={{
+                  320: {
+                    slidesPerView: 1,
+                  },
+                  640: {
+                    slidesPerView: 2,
+                  },
+                  1024: {
+                    slidesPerView: 3,
+                  },
+                }}
+              >
+                {FeaturedProd?.map((item, idx) => (
+                  <SwiperSlide key={idx}>
+                    <div className="feat-product-card">
+                      <div className="icns">
+                        <Image src={item?.cover} alt={item?.title} />
+                      </div>
+                      <h4 className="featP-title">{item.title}</h4>
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="about-sec paddT">
+        <div className="inner-area">
+          <div className="container">
+            <div className="row">
+              <div className="col-md-6">
+                <div className="left-area">
+                  <span className="mini-title text-white">About us</span>
+                  <h2 className="sec-heading text-white">
+                    Who are Kavishree Group
+                  </h2>
+                  <p className=" text-white">
+                    We are a leading manufacturer & exporter since 2019
+                  </p>
+
+                  <Link
+                    href={"/"}
+                    className="floating-btn flex-box white-outline-btn rounded-full"
+                  >
+                    <Image src={assets.OutlineArrow} alt="icon" />
+                  </Link>
+                </div>
+              </div>
+              <div className="col-md-6">
+                <div className="right-area">
+                  <div className="testim-sliderbox">
+                    <Swiper
+                      modules={[Autoplay]}
+                      loop={true}
+                      //   autoplay={{
+                      //     delay: 2500,
+                      //     disableOnInteraction: false,
+                      //   }}
+                      slidesPerView={1}
+                    >
+                      {Testimonials?.map((item, idx) => (
+                        <SwiperSlide key={idx}>
+                          <div className="testm-card position-relative">
+                            <div className="bgImg">
+                              <Image src={item?.coverArt} alt={item?.name} />
+                            </div>
+                            <div className="content-card">
+                              <p className="testm-desc">{item?.message}</p>
+                              <div className="infor">
+                                <div className="avts">
+                                  <Image src={item?.image} alt={item?.name} />
+                                </div>
+                                <div className="inf">
+                                  <h4>{item?.name}</h4>
+                                  <h5>{item?.company}</h5>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </SwiperSlide>
+                      ))}
+                    </Swiper>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="our-services paddT">
+        <div className="inner-area">
+          <div className="container">
+            <div className="heading-col text-center">
+              <span className="mini-title">Our Services</span>
+              <h2 className="sec-heading text-black">
+                Moving the World with Trusted, <br /> End-to-End Global
+                Logistics
+              </h2>
+            </div>
+            <div className="service-listing">
+              <Swiper
+                modules={[Autoplay]}
+                loop={true}
+                autoplay={{
+                  delay: 3000,
+                  disableOnInteraction: false,
+                }}
+                spaceBetween={30}
+                breakpoints={{
+                  320: {
+                    slidesPerView: 1,
+                  },
+                  640: {
+                    slidesPerView: 2,
+                  },
+                  1024: {
+                    slidesPerView: 3,
+                  },
+                }}
+              >
+                {OurServicesData?.map((service, idx) => (
+                  <SwiperSlide key={idx}>
+                    <Link href={`/services/${service?.url}`}>
+                      <div className="service-card">
+                        <div className="icns">
+                          <Image src={service?.icons} alt={service?.title} />
+                        </div>
+                        <h4 className="service-title">{service.title}</h4>
+                        <p className="service-desc">{service.description}</p>
+                      </div>
+                    </Link>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="video-player paddT">
+        <div className="inner-section">
+          <div className="container">
+            <div className="vdo-box position-relative">
+              <Image src={VdoPlacholder} alt="section" className="w-100" />
+              <button onClick={() => setPlayVdo(!playVdo)}>
+                {!playVdo ? <PlayIcon /> : <PauseOutlined  />}
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="our-product paddT">
+        <div className="inner-section">
+          <div className="container">
+            <div className="heading-col text-center">
+              <span className="mini-title">Global Products</span>
+              <h2 className="sec-heading">
+                Kavishree delivers export-ready <br />
+                quality worldwide
+              </h2>
+            </div>
+            <div className="product-listing">
+              <div className="search-box">
+                <input
+                  type="text"
+                  placeholder="Search Product / Search Categories"
+                  className="w-100"
+                  value={searchProduct}
+                  onChange={(e) => setSearchProduct(e.target.value)}
+                />
+
+                <div className="icon d-flex">
+                  <SearchIcon />
+                </div>
+              </div>
+              <div className="product-listing">
+                <Swiper
+                  modules={[Autoplay]}
+                  loop={true}
+                  autoplay={{
+                    delay: 3000,
+                    disableOnInteraction: false,
+                  }}
+                  spaceBetween={30}
+                  breakpoints={{
+                    320: {
+                      slidesPerView: 2,
+                    },
+                    640: {
+                      slidesPerView: 3,
+                    },
+                    1024: {
+                      slidesPerView: 4,
+                    },
+                  }}
+                >
+                  {filteredProducts.length > 0 ? (
+                    filteredProducts.map((item, idx) => (
+                      <SwiperSlide key={idx}>
+                        <div className="product-card">
+                          <div className="icns"></div>
+                          <h4 className="product-title">{item.title}</h4>
+                          <p className="product-desc">{item.description}</p>
+                          <Link
+                            href={`/product/${item.inqUrl}`}
+                            className="flex-box rounded-full red-outline-btn w-100"
+                          >
+                            Inquiry Now
+                          </Link>
+                        </div>
+                      </SwiperSlide>
+                    ))
+                  ) : (
+                    <SwiperSlide>
+                      <p className="text-center w-100">No products found</p>
+                    </SwiperSlide>
+                  )}
+                </Swiper>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -225,17 +392,17 @@ export default function Home() {
                       {
                         key: "import",
                         label: "Import",
-                        children: <FaqCollapse items={importFaqs} />,
+                        children: <FaqCollapse items={FaqImport} />,
                       },
                       {
                         key: "export",
                         label: "Export",
-                        children: <FaqCollapse items={exportFaqs} />,
+                        children: <FaqCollapse items={FaqExport} />,
                       },
                       {
                         key: "other",
                         label: "Other",
-                        children: <FaqCollapse items={generalFaqs} />,
+                        children: <FaqCollapse items={FaqGeneral} />,
                       },
                     ]}
                   />
