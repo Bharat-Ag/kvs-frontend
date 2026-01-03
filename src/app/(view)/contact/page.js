@@ -11,6 +11,7 @@ import CTA from "@/app/components/CTA";
 import {expertiseData} from '../../arrayData'
 import Testimonials from "@/app/components/Testimonials";
 import Banner from "@/app/components/Banner";
+import ContactForm from "@/app/components/ContactForm";
 
 export default function Contact() {
   return (
@@ -18,6 +19,19 @@ export default function Contact() {
       <PageTitle title={"Contact"} />
 
       <Banner title="Contact Us" image={assets.aboutHero}/>
+
+      <section className="contact-block">
+        <div className="inner-area">
+          <div className="container">
+            <div className="contact-wrapper">
+              <div className="contact-left"></div>
+              <div className="contact-right">
+                <ContactForm/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <Testimonials/>
 
