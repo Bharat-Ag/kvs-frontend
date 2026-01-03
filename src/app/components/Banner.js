@@ -7,9 +7,9 @@ const CommonBreadcrumb = dynamic(
   { ssr: false }
 );
 
-const Banner = ({ title, image }) => {
+const Banner = ({ title, image, className }) => {
   return (
-    <section className="about-hero paddB">
+    <section className={`about-hero paddB ${className}`}>
       <div className="banner-blk">
         <div className="banner">
           <span className="banner-overlay"></span>

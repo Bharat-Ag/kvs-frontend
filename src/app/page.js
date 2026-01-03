@@ -11,7 +11,7 @@ import {
 import PageTitle from "./components/PageTitle";
 import Advantages from "./components/Advantages";
 import "../../public/assets/style/home.css";
-import { Tabs, Collapse } from "antd";
+import { Tabs } from "antd";
 import FaqCollapse from "./components/FaqCollapse";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";

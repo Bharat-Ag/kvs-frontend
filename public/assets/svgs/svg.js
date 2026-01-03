@@ -37,6 +37,7 @@ import Avatar3 from "../images/client3.png";
 import Avatar4 from "../images/client4.png";
 import Avatar5 from "../images/client5.png";
 import DoubleQuote from "../images/quote-icon.svg"
+import OurProductBanner from "../images/products/product-bg.jpg"
 
 export const DDIcon = () => {
   return (
@@ -100,5 +101,5 @@ export const PlayIcon = ()=>{
 
 export const assets = {
 Client1,Client2,Client3,Client4,Client5, FAQHero,FeatP1,FeatP2,FeatP3,OutlineArrow,TestimImg,TradeIcon,AirCargoIcon,ExportIcon,OceanIcon,RoadIcon,ImportIcon,siteLogo, bigLogo, facebookIcon, twitterIcon, instagramIcon, linkDnIcon, homeCtaBanner, aboutHero, aboutMain1, aboutMain2, sliderImg1, sliderImg2, sliderImg3, aboutImportExport, testimonialImage1, Avatar1, Avatar2, Avatar3, Avatar4, Avatar5,
-  DoubleQuote
+  DoubleQuote , OurProductBanner
 };

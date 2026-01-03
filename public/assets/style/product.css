@@ -1,0 +1,34 @@
+.pg-product-listing {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.pg-product-listing .product-card {
+  width: calc(100% / 4 - (4 - 1) * 30px / 4);
+}
+
+.table-grid {
+  border: 1px solid #121212;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.table-grid .tb-col {
+  display: flex;
+  font-size: 15px;
+}
+.table-grid .tb-col .label {
+  min-width: 167px;
+  text-align: center;
+  font-weight: 500;
+  border-right: 1px solid #121212;
+}
+.table-grid .tb-col P {
+  text-align: center;
+  flex-grow: 1;
+  color: #222;
+  padding-inline: 5px;
+}
+.table-grid .tb-col:not(:last-of-type) p,
+.table-grid .tb-col:not(:last-of-type) .label {
+  border-bottom: 1px solid #121212;
+}/*# sourceMappingURL=product.css.map */

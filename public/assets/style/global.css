@@ -497,7 +497,7 @@ nav.nav-scrolled {
   color: #444;
   padding-block: 10px;
 }
-.product-card a {
+.product-card .red-outline-btn {
   height: 40px;
   font-weight: 500;
   font-size: 16px;
@@ -659,8 +659,11 @@ nav.nav-scrolled {
      object-fit: cover;
 }
 
-.nav-link:hover {
-  color: #a90001;
+.navLink {
+  color: #fff;
+}
+.navLink.active, .navLink:hover {
+  color: #cc0001;
 }
 
 .cmn-dd-theme.ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item {

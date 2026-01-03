@@ -14,7 +14,7 @@ const breadcrumbMap = {
   "export-solutions": "Export Solutions",
   "import-services": "Import Services",
   "trade-documentation": "Trade Documentation",
-  product: "Our Products",
+  products: "Our Products",
   blog: "Blog",
 };
 

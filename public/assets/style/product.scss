@@ -1,0 +1,36 @@
+@import "mixin.scss";
+
+.pg-product-listing {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  .product-card {
+    @include divLayout(4, 30px);
+  }
+}
+
+.table-grid {
+  border: 1px solid #121212;
+  width: fit-content;
+  .tb-col {
+    display: flex;
+    font-size: 15px;
+    .label {
+      min-width: 167px;
+      text-align: center;
+      font-weight: 500;
+       border-right: 1px solid #121212;
+    }
+    P {
+      text-align: center;
+      flex-grow: 1;color: #222;
+      padding-inline: 5px;
+    }
+    &:not(:last-of-type){
+      p,
+      .label{
+        border-bottom: 1px solid #121212;
+      }
+    }
+  }
+}

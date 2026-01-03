@@ -4,9 +4,11 @@ import Link from "next/link";
 import { assets, DDIcon } from "../../../public/assets/svgs/svg";
 import { Dropdown } from "antd";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
 
   const serviceLinks = [
     { title: "Ocean Logistics", href: "/ocean-logistics" },
@@ -54,24 +56,41 @@ export default function Navbar() {
 
             <div className="mid-navlinks">
               <ul className="navbar-nav flex-row gap-4">
-                {navLinks.map((link, idx) => (
-                  <li key={idx} className="nav-item">
-                    {link.dropdown ? (
-                      <Dropdown menu={servicesMenu} trigger={["click"]} rootClassName="cmn-dd-theme">
-                        <span className="nav-link fw-semibold text-white cursor-pointer">
-                          {link.title} <DDIcon />
-                        </span>
-                      </Dropdown>
-                    ) : (
-                      <Link
-                        className="nav-link fw-semibold text-white"
-                        href={link.href}
-                      >
-                        {link.title}
-                      </Link>
-                    )}
-                  </li>
-                ))}
+                {navLinks?.map((link, idx) => {
+                  const isActive = link.href && pathname === link.href;
+                  return (
+                    <li key={idx} className="nav-item">
+                      {link.dropdown ? (
+                        <Dropdown
+                          menu={servicesMenu}
+                          trigger={["click"]}
+                          rootClassName="cmn-dd-theme"
+                        >
+                          <span
+                            className={`navLink fw-semibold cursor-pointer ${
+                              pathname.includes("logistics") ||
+                              pathname.includes("cargo") ||
+                              pathname.includes("freight")
+                                ? "active"
+                                : ""
+                            }`}
+                          >
+                            {link.title} <DDIcon />
+                          </span>
+                        </Dropdown>
+                      ) : (
+                        <Link
+                          href={link.href}
+                          className={`navLink fw-semibold ${
+                            isActive ? "active" : ""
+                          }`}
+                        >
+                          {link.title}
+                        </Link>
+                      )}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
 

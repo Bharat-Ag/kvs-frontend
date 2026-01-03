@@ -1,11 +1,9 @@
-import PageTitle from "@/app/components/PageTitle";
 import { assets, BlueArrow } from "../../../../public/assets/svgs/svg";
 import Image from "next/image";
 import Link from "next/link";
 import "../../../../public/assets/style/about.css";
-import FaqCollapse from "@/app/components/FaqCollapse";
 import { FaqExport, FaqGeneral, FaqImport } from "@/app/arrayData";
-import CTA from "@/app/components/CTA";
+import PageTitle from "@/app/components/PageTitle";
 
 export default function FAQs() {
   return (
