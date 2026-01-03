@@ -1,23 +1,21 @@
 "use client";
 import { useEffect, useState } from "react";
-import "../../../../public/assets/style/about.css";
 import { toast } from "react-toastify";
 import { assets } from "../../../../public/assets/svgs/svg";
 import ApiService from "@/app/service/api/api.services";
 import CTA from "@/app/components/CTA";
 import Banner from "@/app/components/Banner";
 import PageTitle from "@/app/components/PageTitle";
-import { ProductList } from "@/app/arrayData";
 import Link from "next/link";
+import "../../../../public/assets/style/product.css";
 
 export default function Contact() {
+  const [productData, setProductData] = useState(null);
   const fetchProducts = async () => {
     try {
       const products = await ApiService.getProducts();
-      console.log("Products received in page:", products.data);
-      return products.data;
+      setProductData(products?.data);
     } catch (error) {
-      console.error("Error caught in page:", error);
       toast.error("Failed to fetch products. Please try again.");
       return null;
     }
@@ -26,6 +24,7 @@ export default function Contact() {
   useEffect(() => {
     fetchProducts();
   }, []);
+  
 
   return (
     <>
@@ -36,15 +35,16 @@ export default function Contact() {
         <div className="inner-area">
           <div className="container">
             <div className="pg-product-listing">
-              {ProductList?.map((item, idx) => (
-                <div className="product-card">
-                  <Link href={`/product/${item.inqUrl}`} className="">
-                    <div className="icns"></div>
+              {productData?.map((item, idx) => (
+                <div className="product-card" key={idx}>
+                  <Link href={`/products/${item?.slug}`} className="imglink">
+                    <div className="icns">
+                      <img src={item?.image} alt="" />
+                    </div>
                   </Link>
-                  <h4 className="product-title">{item.title}</h4>
-                  <p className="product-desc">{item.description}</p>
+                  <h4 className="product-title">{item.name}</h4>
                   <Link
-                    href={`/product/${item.inqUrl}`}
+                    href={`/products/${item?.slug}`}
                     className="flex-box rounded-full red-outline-btn w-100"
                   >
                     Inquiry Now

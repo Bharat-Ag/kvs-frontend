@@ -16,15 +16,16 @@
     display: flex;
     font-size: 15px;
     .label {
-      min-width: 167px;
+      min-width: 184px;
       text-align: center;
       font-weight: 500;
        border-right: 1px solid #121212;
+       text-transform: uppercase;
     }
-    P {
+    P {min-width: 184px;
       text-align: center;
       flex-grow: 1;color: #222;
-      padding-inline: 5px;
+      padding-inline: 5px;max-width: 350px;
     }
     &:not(:last-of-type){
       p,
@@ -33,4 +34,8 @@
       }
     }
   }
+}
+
+.product-gallery{
+  .red-outline-btn{margin-top: 20px; height: 40px; width: 270px;}
 }

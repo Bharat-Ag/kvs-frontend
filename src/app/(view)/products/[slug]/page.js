@@ -1,7 +1,7 @@
 "use client";
 
 import { assets } from "../../../../../public/assets/svgs/svg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Thumbs } from "swiper/modules";
 import "swiper/css";
@@ -12,14 +12,32 @@ import "../../../../../public/assets/style/product.css";
 import PageTitle from "../../../components/PageTitle";
 import Banner from "../../../components/Banner";
 import Link from "next/link";
-export default function ProductDetails() {
-  const [thumbsSwiper, setThumbsSwiper] = useState(null);
+import ApiService from "@/app/service/api/api.services";
+import { useParams } from "next/navigation";
+import { toast } from "react-toastify";
+import Image from "next/image";
 
-  const images = [
-    "https://swiperjs.com/demos/images/nature-1.jpg",
-    "https://swiperjs.com/demos/images/nature-2.jpg",
-    "https://swiperjs.com/demos/images/nature-3.jpg",
-  ];
+export default function ProductDetails() {
+  const { slug } = useParams();
+  const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const [productDt, setProductDt] = useState(null);
+  const [imageGallery, setImageGallery] = useState([]);
+
+  const fetchProductDetails = async () => {
+    try {
+      const product = await ApiService.getProductDetail(slug);
+      const data = product?.data;
+
+      setProductDt(data);
+      setImageGallery(data?.images || []);
+    } catch (error) {
+      toast.error("Failed to fetch product details. Please try again.");
+    }
+  };
+
+  useEffect(() => {
+    fetchProductDetails();
+  }, []);
 
   return (
     <>
@@ -31,8 +49,7 @@ export default function ProductDetails() {
           <div className="row">
             <div className="col-md-6">
               <Swiper
-                loop={true}
-                loopedSlides={images.length}
+                loop={imageGallery.length > 1}
                 spaceBetween={10}
                 thumbs={{
                   swiper:
@@ -43,17 +60,22 @@ export default function ProductDetails() {
                 modules={[FreeMode, Thumbs]}
                 className="mySwiper2"
               >
-                {images.map((img, index) => (
+                {imageGallery.map((img, index) => (
                   <SwiperSlide key={index}>
-                    <img src={img} alt={`product-${index}`} />
+                    <Image
+                      src={img}
+                      alt={`product-${index}`}
+                      width={570}
+                      height={570}
+                      className="w-100 h-auto"
+                    />
                   </SwiperSlide>
                 ))}
               </Swiper>
 
               <Swiper
                 onSwiper={setThumbsSwiper}
-                loop={true}
-                loopedSlides={images.length}
+                loop={imageGallery.length > 1}
                 spaceBetween={10}
                 slidesPerView={4}
                 freeMode
@@ -61,54 +83,60 @@ export default function ProductDetails() {
                 modules={[FreeMode, Thumbs]}
                 className="mySwiper"
               >
-                {images.map((img, index) => (
+                {imageGallery.map((img, index) => (
                   <SwiperSlide key={index}>
-                    <img src={img} alt={`thumb-${index}`} />
+                    <Image
+                      src={img}
+                      alt={`thumb-${index}`}
+                      width={120}
+                      height={120}
+                      className="w-100 h-auto"
+                    />
                   </SwiperSlide>
                 ))}
               </Swiper>
             </div>
             <div className="col-md-6">
-              <span className="sec-heading text-black">Product 1</span>
+              <span className="sec-heading text-black">{productDt?.name}</span>
               <div className="table-row">
                 <div className="table-grid">
                   <div className="tb-col">
                     <span className="label">Material</span>
-                    <p>PP, SMS, SMMS</p>
+                    <p>{productDt?.material?.replaceAll(",", ", ")}</p>
                   </div>
 
                   <div className="tb-col">
                     <span className="label">Standard / Thickness</span>
-                    <p>15-40 GSM</p>
+                    <p>{productDt?.standard_thickness}</p>
                   </div>
 
                   <div className="tb-col">
                     <span className="label">Color</span>
-                    <p>White / Customize</p>
+                    <p>{productDt?.color}</p>
                   </div>
 
                   <div className="tb-col">
                     <span className="label">Size</span>
-                    <p>120 x 230, 150 x 220, Customize</p>
+                    <p>{productDt?.size}</p>
                   </div>
 
                   <div className="tb-col">
                     <span className="label">Packaging</span>
-                    <p>100 PCS in Carton</p>
+                    <p>{productDt?.packaging} in Carton</p>
                   </div>
 
                   <div className="tb-col">
                     <span className="label">Application</span>
-                    <p>Medical / Spa / Beauty</p>
+                    <p>{productDt?.application}</p>
                   </div>
 
                   <div className="tb-col">
                     <span className="label">MOQ</span>
-                    <p>100 Carton</p>
+                    <p>{productDt?.moq}</p>
                   </div>
                 </div>
               </div>
-              <button className="flex-box rounded-full red-outline-btn w-100">
+              <button className="flex-box rounded-full red-outline-btn">
                 Inquiry Now
               </button>
             </div>
