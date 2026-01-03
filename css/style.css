@@ -106,7 +106,9 @@ img {
 
 .mini-title {
   font-weight: 500;
+  color: var(--theme-red);
   font-size: 18px;
+  margin-bottom: 20px;
 }
 
 .red-outline-btn {
