@@ -106,7 +106,9 @@ img {
 
 .mini-title {
   font-weight: 500;
+  color: var(--theme-red);
   font-size: 18px;
+  margin-bottom: 20px;
 }
 
 .red-outline-btn {
@@ -123,7 +125,7 @@ img {
   color: var(--white-clr);
 }
 
-.white-outline-btn:hover{
+.white-outline-btn:hover {
   background: #fff;
   color: #1e1e1e;
 }
@@ -140,8 +142,7 @@ img {
   background: var(--theme-red);
   padding-block: 75px;
 }
-.cta a{
-  
+.cta a {
   min-width: 170px;
   min-height: 50px;
 }
@@ -200,4 +201,12 @@ footer a:hover {
 .ft-links {
   justify-content: space-between;
   gap: 58px;
+}
+
+.faqTab-area .nav-link {
+  padding: 0;
+  border: 0;
+  width: 170px;
+  height: 50px;
+  color: var(--clr-999);
 }
