@@ -1,3 +1,4 @@
+import {assets} from "../../public/assets/svgs/svg";
 export const HomeBannerSlides = [
   {
     title: "Across Global Waters",
@@ -163,56 +164,54 @@ export const FaqGeneral = [
   }
 ];
 
-export const Testimonials = [
+export const testimonialsData = [
   {
     message:
       "We've trusted Kavishree Exim for years, and they never disappoint. Every shipment is handled with care, delivered on time, and supported with clear communication.",
     name: "Daniel Roberts",
     company: "XYZ Company",
-    image: "image1"
+    image: assets.testimonialImage1,
+    avatar:assets.Avatar1
   },
   {
     message:
       "Kavishree Exim manages our logistics smoothly and professionally. Their reliability and timely execution make global trade effortless for us.",
     name: "Ahmed Al-Farsi",
     company: "XYZ Company",
-    image: "image2"
+    image: assets.testimonialImage1,
+    avatar:assets.Avatar2
   },
   {
     message:
       "From documentation to final delivery, Kavishree Exim handles everything with precision. Their service consistency truly stands out.",
     name: "Michael Thompson",
     company: "XYZ Company",
-    image: "image3"
+    image: assets.testimonialImage1,
+    avatar:assets.Avatar3
   },
   {
     message:
       "Kavishree Exim provides dependable logistics support with excellent coordination. Our shipments always arrive safely and as scheduled.",
     name: "Sophie Laurent",
     company: "XYZ Company",
-    image: "image4"
+    image: assets.testimonialImage1,
+    avatar:assets.Avatar4
   },
   {
     message:
       "Working with Kavishree Exim has simplified our export operations. Clear processes, on-time delivery, and professional handling every time.",
     name: "Rajiv Mehta",
     company: "Company",
-    image: "image4"
+    image: assets.testimonialImage1,
+    avatar:assets.Avatar5
   },
-  {
-    message:
-     "We've trusted Kavishree Exim for years, and they never disappoint. Every shipment is handled with care, delivered on time, and supported with clear communication.",
-    name: "Daniel Roberts",
-    company: "xyz Company",
-    image: "image5"
-  }
 ];
 
-export const Expertise = [
+export const expertiseData = [
   { label: "Ocean Logistics", value: 100 },
-  { label: "Export Solutions", value: 100 },
-  { label: "Air Cargo", value: 100 },
-  { label: "Import Services", value: 100 },
-  { label: "Road Freight", value: 100 },
-  { label: "Trade Documentation", value: 100 }
+  { label: "Export Solutions", value: 90 },
+  { label: "Air Cargo", value: 80 },
+  { label: "Import Services", value: 70 },
+  { label: "Road Freight", value: 60 },
+  { label: "Trade Documentation", value: 50 }
 ];

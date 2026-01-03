@@ -141,21 +141,6 @@
   color: #999;
 }
 
-.progress-bar {
-  width: 100%;
-  height: 20px;
-  background: #e6e6e6;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.progress-fill {
-  width: 0;
-  height: 100%;
-  background: #cc0001;
-  border-radius: 10px;
-}
-
 .about-main .sec-heading,
 .expertise .sec-heading {
   margin-bottom: 30px;
@@ -190,4 +175,119 @@
 .slbCloseBtn {
   position: fixed;
   right: 0;
+}
+
+.ant-progress-rail {
+  border-radius: 50px !important;
+}
+
+.ant-progress-track {
+  transition: width 1.8s ease-in-out !important;
+}
+
+.shipping-wrapper {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* IMAGE */
+.shipping-image {
+  position: relative;
+  width: calc(100% / 2 - (2 - 1) * 30px / 2);
+  height: 570px;
+}
+.shipping-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 40px;
+}
+
+/* EXPERIENCE BADGE */
+.exp-badge {
+  position: absolute;
+  bottom: 32px;
+  right: 20px;
+  background: #cc0001;
+  color: #fff;
+  min-width: 222px;
+  min-height: 200px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.exp-badge .exp-num {
+  font-size: 80px;
+  font-weight: 500;
+  line-height: 60px;
+}
+.exp-badge .exp-num span {
+  font-size: 50px;
+}
+.exp-badge .exp-text {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* CONTENT */
+.shipping-content {
+  width: calc(100% / 2 - (2 - 1) * 30px / 2);
+}
+.shipping-content .wrapper {
+  max-width: 570px;
+}
+
+.divider {
+  width: 100%;
+  display: block;
+  height: 1px;
+  background-color: #dddddd;
+}
+
+/* SHIPMENT COUNTER */
+.shipment-counter p {
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 100%;
+  color: #cc0001;
+}
+.shipment-counter p span {
+  font-size: 16px;
+  color: #cc0001;
+}
+.shipment-counter span {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  color: #000;
+}
+
+.about-shipping .red-btn {
+  border-radius: 50px;
+  height: 50px;
+  display: flex;
+  min-width: 200px;
+  align-items: center;
+  justify-content: center;
+}
+.about-shipping .mini-title {
+  margin-bottom: 17px;
+}
+.about-shipping .cmn-text {
+  margin-top: 30px;
+}
+
+.shipping-mid {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 75px;
+  margin-bottom: 30px;
 }/*# sourceMappingURL=about.css.map */
