@@ -31,6 +31,21 @@
   border-radius: 10px;
   width: 80px;
   height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 3px;
+}
+.pg-blog-listing .icns .date-block .day {
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 1;
+  margin-bottom: -4px;
+}
+.pg-blog-listing .icns .date-block .month {
+  font-size: 16px;
+  text-transform: capitalize;
 }
 .pg-blog-listing .blog-title {
   font-weight: 500;

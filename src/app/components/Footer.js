@@ -131,7 +131,7 @@ export default function Footer() {
             Reserved. | Design By SkyQuro Tech
           </p>
         </div>
-        <div className="container">
+        <div className="container position-relative">
           <div className="bigLogo">
             <Image src={assets.bigLogo} className="image-cover" alt="" />
           </div>

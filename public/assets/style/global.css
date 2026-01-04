@@ -271,7 +271,8 @@ footer .help-fts li a {
 
 .bigLogo {
   position: absolute;
-  bottom: 0;
+  bottom: -172px;
+  width: 100%;
 }
 
 .link-box.start {
@@ -880,4 +881,8 @@ nav.nav-scrolled {
   width: 170px;
   font-weight: 600;
   font-size: 16px;
+}
+
+.copyright {
+  margin-bottom: 20px;
 }/*# sourceMappingURL=global.css.map */

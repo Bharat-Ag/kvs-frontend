@@ -7,6 +7,8 @@ import ApiService from "@/app/service/api/api.services";
 import CTA from "@/app/components/CTA";
 import Link from "next/link";
 import "../../../../public/assets/style/blog.css";
+import { toast } from "react-toastify";
+import dayjs from "dayjs";
 
 export default function Blog() {
   const [blogData, setBlogData] = useState(null);
@@ -23,8 +25,7 @@ export default function Blog() {
 
   useEffect(() => {
     fetchBlog();
-
-    console.log("blogData", blogData);
+    console.log(blogData)
   }, []);
 
   return (
@@ -36,24 +37,31 @@ export default function Blog() {
         <div className="inner-area">
           <div className="container">
             <div className="pg-blog-listing">
-              {blogData?.map((item, idx) => (
-                <Link
-                  href={`/blogs/${item?.slug}`}
-                  className="blog-card"
-                  key={idx}
-                >
-                  <div className="blog-inner">
-                    <div className="icns">
-                    <div className="date-block"></div>
-                      <img src={item?.image} alt="" />
+              {blogData?.map((item, idx) => {
+                const date = dayjs(item.created_at);
+                return(
+                  <Link
+                    href={`/blogs/${item?.slug}`}
+                    className="blog-card"
+                    key={idx}
+                  >
+                    <div className="blog-inner">
+                      <div className="icns">
+                        <div className="date-block">
+                          <span className="day">{date.format("DD")}</span>
+                          <span className="month">{date.format("MMM").toLowerCase()}</span>
+                          <span className="year">{date.format("YYYY")}</span>
+                        </div>
+                        <img src={item?.image} alt="" />
+                      </div>
+                      <div className="content">
+                        <h4 className="blog-title">{item.title}</h4>
+                        <p className="blog-desc">{item.title}</p>
+                      </div>
                     </div>
-                    <div className="content">
-                      <h4 className="blog-title">{item.title}</h4>
-                      <p className="blog-desc">{item.title}</p>
-                    </div>
-                  </div>
-                </Link>
-              ))}
+                  </Link>
+                )
+              })}
             </div>
           </div>
         </div>
