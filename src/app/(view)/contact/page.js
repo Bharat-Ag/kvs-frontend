@@ -19,7 +19,7 @@ export default function Contact() {
         <div className="inner-area">
           <div className="container">
             <div className="row contact-wrapper">
-              <div className="col-md-6 contact-left">
+              <div className="col-lg-6 contact-left mb-5 mb-lg-0">
                   <span className="mini-title">Contact Us Now</span>
                   <h2 className="sec-heading">
                     We’re here to answer your questions.
@@ -69,7 +69,7 @@ export default function Contact() {
                     </div>
                   </div>
               </div>
-              <div className="col-md-6 contact-right">
+              <div className="col-lg-6 contact-right">
                 <ContactForm/>
               </div>
             </div>

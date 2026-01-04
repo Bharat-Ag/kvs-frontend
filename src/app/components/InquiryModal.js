@@ -7,13 +7,7 @@ import Image from "next/image";
 import ApiService from "../service/api/api.services";
 import { toast } from "react-toastify";
 
-const InquiryModal = ({
-  isOpen,
-  setIsOpen,
-  productId,
-  productImage,
-  productName,
-}) => {
+const InquiryModal = ({ isOpen, setIsOpen, productId, productImage, productName }) => {
   const [generatedCaptcha, setGeneratedCaptcha] = useState("");
   const formikRef = useRef(null);
   const [submitting, setSubmitting] = useState(false);
@@ -63,9 +57,7 @@ const InquiryModal = ({
 
     if (!values.email) {
       errors.email = "Required";
-    } else if (
-      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-    ) {
+    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
       errors.email = "Invalid email";
     }
 
@@ -90,10 +82,7 @@ const InquiryModal = ({
       formData.append("email", values.email);
       formData.append("phone", values.phone);
       formData.append("country", values.country);
-      formData.append(
-        "message",
-        `City: ${values.city}, State: ${values.state}, PIN: ${values.pin}`
-      );
+      formData.append("message", `City: ${values.city}, State: ${values.state}, PIN: ${values.pin}`);
 
       const res = await ApiService.submitInquiry(formData);
       toast.success(res?.message || "Inquiry sent successfully");
@@ -109,39 +98,20 @@ const InquiryModal = ({
   };
 
   return (
-    <Modal
-      open={isOpen}
-      onCancel={() => setIsOpen(false)}
-      footer={null}
-      centered
-      destroyOnHidden
-      width={1170}
-      closeIcon={null}
-      className="inqury-modal"
-    >
+    <Modal open={isOpen} onCancel={() => setIsOpen(false)} footer={null} centered destroyOnHidden width={1170} closeIcon={null} className="inqury-modal">
       <div className="form-area">
         {/* LEFT IMAGE */}
         <div className="frm-col img-box">
           {productImage && (
             <div className="img-shows">
-              <Image
-                src={productImage}
-                alt={productName}
-                width={540}
-                height={520}
-              />
+              <Image src={productImage} alt={productName} width={540} height={520} />
             </div>
           )}
         </div>
 
         {/* FORM */}
         <div className="frm-col form-box">
-          <Formik
-            innerRef={formikRef}
-            initialValues={initialValues}
-            validate={validate}
-            onSubmit={handleSubmit}
-          >
+          <Formik innerRef={formikRef} initialValues={initialValues} validate={validate} onSubmit={handleSubmit}>
             {({ values, errors, touched, handleChange, handleBlur }) => (
               <Form className="inquiry-form">
                 <div className="inquiry-block">
@@ -158,29 +128,15 @@ const InquiryModal = ({
                   ].map(([field, label]) => (
                     <div className="form-block" key={field}>
                       <label className="label-style">{label}</label>
-                      <Input
-                        name={field}
-                        value={values[field]}
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                        className="input-style"
-                        disabled={submitting}
-                      />
-                      {errors[field] && touched[field] && (
-                        <div className="errors">{errors[field]}</div>
-                      )}
+                      <Input name={field} value={values[field]} onChange={handleChange} onBlur={handleBlur} className="input-style" disabled={submitting} />
+                      {errors[field] && touched[field] && <div className="errors">{errors[field]}</div>}
                     </div>
                   ))}
 
                   {/* CAPTCHA */}
                   <div className="form-block captcha-block">
                     <span className="captcha-box">{generatedCaptcha}</span>
-                    <Button
-                      type="button"
-                      className="refresh-captcha no-antd-style"
-                      onClick={generateCaptcha}
-                      disabled={submitting}
-                    >
+                    <Button type="button" className="refresh-captcha no-antd-style" onClick={generateCaptcha} disabled={submitting}>
                       <i className="fa-solid fa-arrows-rotate"></i>
                     </Button>
                   </div>
@@ -192,23 +148,11 @@ const InquiryModal = ({
 
         {/* BUTTONS */}
         <div className="btn-area flex-box w-100">
-          <button
-            type="button"
-            className="red-outline-btn rounded-full fw-semibold flex-box"
-            onClick={() => setIsOpen(false)}
-            disabled={submitting}
-          >
+          <button type="button" className="red-outline-btn rounded-full fw-semibold flex-box" onClick={() => setIsOpen(false)} disabled={submitting}>
             Cancel
           </button>
 
-          <button
-            type="button"
-            className="red-btn rounded-full fw-semibold flex-box"
-            onClick={() => formikRef.current?.submitForm()}
-            disabled={
-              submitting || Object.keys(formikRef.current?.errors || {}).length > 0
-            }
-          >
+          <button type="button" className="red-btn rounded-full fw-semibold flex-box" onClick={() => formikRef.current?.submitForm()} disabled={submitting || Object.keys(formikRef.current?.errors || {}).length > 0}>
             {submitting ? <Spin size="small" /> : "Send Now"}
           </button>
         </div>

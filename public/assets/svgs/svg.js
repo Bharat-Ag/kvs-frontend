@@ -1,9 +1,9 @@
 import siteLogo from "../images/kvs-header-logo.svg";
 import homeCtaBanner from "../images/home/sub-bg.jpg";
-import facebookIcon from "../images/facebook.png";
-import twitterIcon from "../images/twitter.png";
-import instagramIcon from "../images/instagram.png";
-import linkDnIcon from "../images/linkdln.png";
+import facebookIcon from "../images/facebook.svg";
+import twitterIcon from "../images/twitter.svg";
+import instagramIcon from "../images/instagram.svg";
+import linkDnIcon from "../images/linkdln.svg";
 import bigLogo from "../images/big-logo.jpg";
 import sliderImg1 from "../images/home/slider-img1.webp"
 import sliderImg2 from "../images/home/slider-img2.webp"
@@ -115,6 +115,21 @@ export const PlayIcon = ()=>{
     </svg>
   )
 }
+
+export const RightDQouted = () => {
+  return (
+    <svg width="41" height="28" viewBox="0 0 41 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M5.51432 17.8421H11.3276C11.3099 17.9698 11.2981 18.0995 11.2726 18.2253C10.6869 21.1338 7.9946 23.4152 5.01354 23.6437C4.87794 23.6535 4.66963 23.6672 4.44167 23.683C3.79509 23.7262 3.29003 24.2646 3.29003 24.9132V26.7133C3.29003 27.3619 3.79313 27.9003 4.44167 27.9436C11.3653 28.6196 17.3768 23.2152 17.7245 16.2837C17.7422 15.9968 17.7854 15.3935 17.8168 14.9415C17.8326 14.8137 17.8424 14.684 17.8424 14.5524V14.5504C17.8522 14.405 17.8503 14.2635 17.8424 14.122V5.51446C17.8424 2.46835 15.3741 0 12.3279 0H5.51446C2.46835 0 0 2.4683 0 5.51446V12.3259C0 15.372 2.4683 17.8404 5.51446 17.8404L5.51432 17.8421Z"
+        fill="#CC0001"
+      />
+      <path
+        d="M40.2165 14.9415C40.2322 14.8137 40.2421 14.684 40.2421 14.5524V14.5504C40.2519 14.405 40.2499 14.2635 40.2421 14.122V5.51446C40.2421 2.46835 37.7737 0 34.7276 0H27.9141C24.868 0 22.3997 2.4683 22.3997 5.51446V12.3259C22.3997 15.372 24.868 17.8404 27.9141 17.8404H33.7274C33.7097 17.9681 33.6979 18.0978 33.6724 18.2236C33.0867 21.1321 30.3944 23.4136 27.4134 23.642C27.2778 23.6518 27.0714 23.6655 26.8415 23.6813C26.1949 23.7245 25.6898 24.263 25.6898 24.9115V26.7116C25.6898 27.3602 26.1929 27.8986 26.8415 27.9419C33.7651 28.6179 39.7766 23.2135 40.1243 16.2821C40.142 15.9951 40.1852 15.3918 40.2167 14.9398L40.2165 14.9415Z"
+        fill="#CC0001"
+      />
+    </svg>
+  );
+};
 
 export const assets = {
   Client1, Client2, Client3, Client4, Client5, FAQHero, FeatP1, FeatP2, FeatP3, OutlineArrow, TestimImg, TradeIcon, AirCargoIcon, ExportIcon, OceanIcon, RoadIcon, ImportIcon, siteLogo, bigLogo, facebookIcon, twitterIcon, instagramIcon, linkDnIcon, homeCtaBanner, aboutHero, aboutMain1, aboutMain2, sliderImg1, sliderImg2, sliderImg3, aboutImportExport, testimonialImage1, Avatar1, Avatar2, Avatar3, Avatar4, Avatar5, DoubleQuote, OurProductBanner, productHero, ContactIcon, MailIcon, MapperIcon, blogHero, servicesHero, servicesOceanHero, servicesAirHero, servicesRoadHero, servicesExportHero, servicesImportHero, servicesTradeHero, servicesOceanImg, servicesAirImg, servicesRoadImg, servicesExportImg, servicesImportImg, servicesTradeImg,

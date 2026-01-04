@@ -7,7 +7,7 @@ const CommonBreadcrumb = dynamic(
   { ssr: false }
 );
 
-const Banner = ({ title, image, className }) => {
+const Banner = ({ title, image, className = "", crumbLvl = Infinity }) => {
   return (
     <section className={`about-hero paddB ${className}`}>
       <div className="banner-blk">
@@ -18,7 +18,7 @@ const Banner = ({ title, image, className }) => {
 
         <div className="header-info">
           <h1 className="h-title">{title}</h1>
-          <CommonBreadcrumb />
+          <CommonBreadcrumb level={crumbLvl} />
         </div>
       </div>
     </section>

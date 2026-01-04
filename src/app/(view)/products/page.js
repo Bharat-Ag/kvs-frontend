@@ -1,52 +1,41 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { toast } from "react-toastify";
 import { assets } from "../../../../public/assets/svgs/svg";
-import ApiService from "@/app/service/api/api.services";
 import CTA from "@/app/components/CTA";
 import Banner from "@/app/components/Banner";
 import PageTitle from "@/app/components/PageTitle";
 import Link from "next/link";
 import "../../../../public/assets/style/product.css";
+import { useProductStore } from "@/app/store/useProductStore";
 
-export default function Contact() {
-  const [productData, setProductData] = useState(null);
-  const fetchProducts = async () => {
-    try {
-      const products = await ApiService.getProducts();
-      setProductData(products?.data);
-    } catch (error) {
-      toast.error("Failed to fetch products. Please try again.");
-      return null;
-    }
-  };
+export default function Products() {
+  const { products, fetchProducts, loading } = useProductStore();
 
   useEffect(() => {
-    fetchProducts();
-  }, []);
-  
+    fetchProducts().catch(() => toast.error("Failed to fetch products"));
+  }, [fetchProducts]);
 
   return (
     <>
-      <PageTitle title={"Product"} />
-
+      <PageTitle title="Product" />
       <Banner title="Our Products" image={assets.productHero} />
+
       <section className="pg-product-section paddB">
         <div className="inner-area">
           <div className="container">
+            {loading && <p>Loading products...</p>}
+
             <div className="pg-product-listing">
-              {productData?.map((item, idx) => (
-                <div className="product-card" key={idx}>
-                  <Link href={`/products/${item?.slug}`} className="imglink">
+              {products.map((item) => (
+                <div className="product-card" key={item.id}>
+                  <Link href={`/products/${item.slug}`} className="imglink">
                     <div className="icns">
-                      <img src={item?.image} alt="" />
+                      <img src={item.image} alt={item.name} />
                     </div>
                   </Link>
                   <h4 className="product-title">{item.name}</h4>
-                  <Link
-                    href={`/products/${item?.slug}`}
-                    className="flex-box rounded-full red-outline-btn w-100"
-                  >
+                  <Link href={`/products/${item.slug}`} className="flex-box rounded-full red-outline-btn w-100">
                     Inquiry Now
                   </Link>
                 </div>
@@ -55,7 +44,8 @@ export default function Contact() {
           </div>
         </div>
       </section>
-      <CTA title={"Start Your Global Trade Journey"} />
+
+      <CTA title="Start Your Global Trade Journey" />
     </>
   );
 }

@@ -3,11 +3,17 @@
 .hero-sec {
     .inner-area {
         padding: 20px;
+        @include phone{padding: 20px 12px ;}
     }
     .mySwiper {
         border-radius: 40px;
+        @include phone-xr{border-radius: 30px;}
     }
-    .custom-slider-btns { position: absolute; display: flex; justify-content: space-between; top: 50%; transform: translate(-50% , -50%); left: 50%;z-index: 2; width: calc(100% - 164px); }
+    .custom-slider-btns {
+        position: absolute; display: flex; justify-content: space-between; top: 50%; transform: translate(-50% , -50%); left: 50%;z-index: 2; width: calc(100% - 164px);
+        @include tab{width: calc(100% - 134px);}
+        @include phone{width: calc(100% - 74px);}
+    }
     .custom-swiper-prev{
         button{&:hover{transform: translateX(-5px);}}
     }
@@ -23,14 +29,39 @@
     .hero-para { color: #cccccc; font-size: 18px; margin-block: 15px; }
     .red-btn { height: 50px; min-width: 170px; width: fit-content; font-weight: 600; font-size: 16px;}
     .slider-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    @include tab{min-height: 550px;}
+    @include tab{min-height: 400px;border-radius: 30px;}
+    @include phone{padding-left: 62px;
+        .hero-para { font-size: 15px; margin-block: 8px 15px; }
+    }
+    @include phone-xr{
+        .sec-heading{padding-right: 23px;font-size: 30px;line-height: 1.3;}
+        .red-btn{height: 45px;font-size: 14px;}
+        .hero-para{font-size: 14px;}
+    }
 }
 
 .vdo-box{
-    height: 0;
-    width: 100%;
-    padding-bottom: 45%;
-    border-radius: 40px;
-    overflow: hidden;
+    height: 0;width: 100%;padding-bottom: 45%;border-radius: 40px;overflow: hidden;
+    @include phone-xr{padding-bottom: 50%;border-radius: 24px;}
+    video,
+    img{position: absolute;inset: 0;height: 100%;object-fit: cover;}
+    button{
+      position: absolute;top: 50%;left: 50%;transform: translate(-50% , -50%);--sz:70px;height: var(--sz);width: var(--sz);
+      border-radius: 50%;@include dispflex(flex,center,center);background: #000000;z-index: 3;color: #fff; font-size: 24px;
+      &:hover{background: #121212;}
+      svg{color: #fff;}
+      @include phone-xr{
+        --sz: 48px;
+        svg{max-width: 10px;}
+        .anticon-pause{
+            svg{max-width: 16px;}
+        }
+      }
+    }
+}
+.faqTab-area{
+    @include tab{margin-top: 35px;}
 }
 
 .about-sec{
@@ -44,18 +75,35 @@
             content: '';position: absolute;width: 351px; height: 271px;
             right: 0;bottom: 0;background-image: url("../images/home/map.svg");
         }
+        @include phone{
+            height: 420px;margin-bottom: 25px;
+            &::before{width: 291px;height: 201px;background-size: contain;}
+        }
+        @include phone-xr{
+            &::before{width: 60vw;height: 40vw;;background-size: contain;}
+            height: 370px;border-radius: 30px;
+        }
     }
     .floating-btn{
-        position: absolute;bottom: 35px;left: 35px;
-        --sz:100px;border-radius: 50%;height: var(--sz);width: var(--sz);
-        border: 1px solid #fff;
-        &:hover{
-            img{filter: brightness(0) saturate(100%) invert(31%) sepia(96%) saturate(4210%) hue-rotate(333deg) brightness(68%) contrast(170%);}
+        position: absolute;bottom: 35px;left: 35px;--sz:100px;border-radius: 50%;height: var(--sz);width: var(--sz);border: 1px solid #fff;
+        &:hover{img{filter: brightness(0) saturate(100%) invert(31%) sepia(96%) saturate(4210%) hue-rotate(333deg) brightness(68%) contrast(170%);}}
+        @include phone-xr{
+            --sz: 65px;
+            img{max-width: 24px;height: auto;}
         }
     }
     .right-area{
-        height: 570px;
-         position: relative;overflow: hidden;
-        border-radius: 40px;
+        height: 570px;position: relative;overflow: hidden;border-radius: 40px;
+        @include phone-xr{
+            height: 420px;border-radius: 30px;
+        }
     }
+}
+
+.product-listing-inner{
+    @include phone-xr{
+        .product-card .icns {height: 223px;border-radius: 25px;}
+        .product-title{font-size: 16px;}
+    }
+    @include phone-5s{.product-card .icns {height: 173px;border-radius: 25px;}}
 }

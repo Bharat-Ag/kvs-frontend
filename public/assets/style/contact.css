@@ -4,6 +4,11 @@
 .contact-wrapper .sec-heading {
   margin-bottom: 30px;
 }
+@media (max-width: 480px) {
+  .contact-wrapper .sec-heading {
+    margin-bottom: 15px;
+  }
+}
 .contact-wrapper .cmn-text {
   margin-bottom: 30px;
   max-width: 410px;
@@ -13,15 +18,32 @@
   display: flex;
   gap: 30px;
 }
+@media (max-width: 480px) {
+  .contact-item {
+    gap: 15px;
+  }
+}
 
 .contact-icon {
   background-color: #CC0001;
-  width: 70px;
-  height: 70px;
+  --wd:70px;
+  width: var(--wd);
+  min-width: var(--wd);
+  height: var(--wd);
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+@media (max-width: 480px) {
+  .contact-icon {
+    --wd: 45px;
+    border-radius: 10px;
+  }
+  .contact-icon img {
+    max-width: 38%;
+    height: auto;
+  }
 }
 
 .contact-info {
@@ -37,11 +59,24 @@
   color: #333333;
   margin-bottom: 8px;
 }
+@media (max-width: 480px) {
+  .contact-content .title {
+    font-size: 16px;
+    line-height: 1.4;
+    margin-bottom: 3px;
+  }
+}
 .contact-content .value {
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
   color: #666;
+}
+@media (max-width: 480px) {
+  .contact-content .value {
+    font-size: 14px;
+    line-height: 1.3;
+  }
 }
 .contact-content.two-col {
   max-width: 400px;

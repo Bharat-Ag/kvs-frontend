@@ -15,22 +15,25 @@ const breadcrumbMap = {
   "import-services": "Import Services",
   "trade-documentation": "Trade Documentation",
   products: "Our Products",
-  blog: "Blog",
+  blogs: "Blogs",
 };
 
-const CommonBreadcrumb = () => {
+const CommonBreadcrumb = ({ level }) => {
   const pathname = usePathname();
   const paths = pathname.split("/").filter(Boolean);
 
+  // Limit paths based on the level prop
+  const limitedPaths = level ? paths.slice(0, level) : paths;
+
   const items = [
     { title: <Link href="/">Home</Link> },
-    ...paths.map((path, index) => {
+    ...limitedPaths.map((path, index) => {
       const url = "/" + paths.slice(0, index + 1).join("/");
       const label = breadcrumbMap[path] || path.replace(/-/g, " ");
 
       return {
         title:
-          index === paths.length - 1 ? (
+          index === limitedPaths.length - 1 ? (
             <span>{label}</span>
           ) : (
             <Link href={url}>{label}</Link>
@@ -40,11 +43,7 @@ const CommonBreadcrumb = () => {
   ];
 
   return (
-    <Breadcrumb
-      className="h-info"
-      separator={<BlueArrow />}
-      items={items}
-    />
+    <Breadcrumb className="h-info" separator={<BlueArrow />} items={items} />
   );
 };
 

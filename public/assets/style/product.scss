@@ -1,11 +1,10 @@
 @import "mixin.scss";
 
 .pg-product-listing {
-  display: flex;
-  gap: 30px;
-  flex-wrap: wrap;
+  display: flex;gap: 30px;flex-wrap: wrap;
   .product-card {
     @include divLayout(4, 30px);
+    @include tab{@include divLayout(3, 30px);}
   }
 }
 
@@ -13,44 +12,72 @@
   border: 1px solid #121212;
   width: fit-content;
   .tb-col {
-    display: flex;
-    font-size: 18px;
-    .label {
-      min-width: 214px;
-      text-align: center;
-      font-weight: 500;
-       border-right: 1px solid #121212;
-       text-transform: uppercase;
-    }
-    P {min-width: 214px;
-      text-align: center;
-      flex-grow: 1;color: #222;
-      padding-inline: 5px;max-width: 350px;
-    }
+    display: flex;font-size: 18px;
+    .label { min-width: 214px; text-align: center; font-weight: 500; border-right: 1px solid #121212; text-transform: uppercase; }
+    p{min-width: 214px; text-align: center; flex-grow: 1;color: #222; padding-inline: 5px;max-width: 350px; }
     &:not(:last-of-type){
-      p,
-      .label{
-        border-bottom: 1px solid #121212;
-      }
+      p,.label{border-bottom: 1px solid #121212;}
+    }
+    @include tab{
+      font-size: 16px;
+      .label{min-width: 195px;}
+      p{min-width: 175px;}
+    }
+    @include phone-xr{
+      font-size: 3.4vw;
+      .label{min-width: 43vw;padding-block: 2px;}
+      p{min-width: fit-content;}
     }
   }
+  @include phone-xr{width: 100%;}
 }
 
 .product-gallery{
-  .red-outline-btn{margin-top: 20px; height: 40px; width: 270px;}
+  .red-outline-btn{
+    margin-top: 20px; height: 40px; width: 270px;
+    @include tab{width: 210px;}
+  }
   .mySwiper2{
     .img-box{height: 570px; border-radius: 30px; overflow: hidden;}
     img{object-fit: cover;}
-    
+    @include tab{.img-box{height: 370px;}}
+    @include phone-xr{.img-box{height: 280px;border-radius: 22px;}}
   }
   .mySwiperSmall {
     margin-top: 30px;
+    @include tab{margin-top: 25px;}
+    @include phone-xr{margin-top: 20px;}
     .img-box{height: 170px; border-radius: 20px; overflow: hidden;}
     img{object-fit: cover;}
-    &.small-mode-swiper{
-      .swiper-wrapper{
-        justify-content: center;
-      }
+    &.small-mode-swiper{.swiper-wrapper{justify-content: center;}}
+     @include tab{.img-box{height: 120px;}}
+     @include phone-xr{.img-box{height: 110px;border-radius: 16px;}}
+  }
+}
+@include phone{
+  .dt-shows-box{margin-top: 35px;}
+  .table-row{margin-top: 14px;}
+}
+
+.pg-product-listing {
+  @include phone{
+    gap: 30px 26px;
+    .product-card{
+      @include divLayout(3,26px)
     }
+    .icns{height: 242px; border-radius: 31px;}
+  }
+  @include phone-xs{
+    gap: 25px;
+    .product-card{
+      @include divLayout(2,25px)
+    }
+  }
+  @include phone-xr{
+    gap:40px 25px;
+    .product-card{
+      @include divLayout(1,25px)
+    }
+    .icns{height: 0; border-radius: 31px; padding-bottom: 80%;}
   }
 }

@@ -79,12 +79,7 @@ export default function Footer() {
                 <ul className="flex-row">
                   {socialLinks.map((item, index) => (
                     <li key={index}>
-                      <Link
-                        href={item.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        title={item.alt}
-                      >
+                      <Link href={item.href} target="_blank" rel="noopener noreferrer" title={item.alt}>
                         <Image src={item.icon} alt={item.alt} />
                       </Link>
                     </li>
@@ -98,10 +93,7 @@ export default function Footer() {
                 <ul className="lnk-block">
                   <li>
                     <span className="d-block label">Email</span>
-                    <a
-                      className="fw-semibold"
-                      href="mailto:contact@kavishreegroup.com"
-                    >
+                    <a className="fw-semibold" href="mailto:contact@kavishreegroup.com">
                       contact@kavishreegroup.com
                     </a>
                   </li>
@@ -126,10 +118,7 @@ export default function Footer() {
         </div>
         <span className="ft-divder"></span>
         <div className="container">
-          <p className="copyright text-center">
-            Copyright © {new Date().getFullYear()} kavishreegroup. All Rights
-            Reserved. | Design By SkyQuro Tech
-          </p>
+          <p className="copyright text-center">Copyright © {new Date().getFullYear()} kavishreegroup. All Rights Reserved. | Design By SkyQuro Tech</p>
         </div>
         <div className="container position-relative">
           <div className="bigLogo">

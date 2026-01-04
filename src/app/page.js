@@ -1,13 +1,7 @@
 "use client";
 import CTA from "./components/CTA";
 import Image from "next/image";
-import {
-  assets,
-  PlayIcon,
-  SearchIcon,
-  SliderArrowN,
-  SliderArrowP,
-} from "../../public/assets/svgs/svg";
+import { assets, PlayIcon, RightDQouted, SearchIcon, SliderArrowN, SliderArrowP } from "../../public/assets/svgs/svg";
 import PageTitle from "./components/PageTitle";
 import Advantages from "./components/Advantages";
 import "../../public/assets/style/home.css";
@@ -19,9 +13,10 @@ import "swiper/css";
 import "swiper/css/navigation";
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { FaqExport, FaqGeneral, FaqImport, FeaturedProd, OurServicesData, ProductList, Testimonials, testimonialsData, } from "./arrayData";
+import { FaqExport, FaqGeneral, FaqImport, FeaturedProd, OurServicesData, ProductList, Testimonials, testimonialsData } from "./arrayData";
 import VdoPlacholder from "../../public/assets/images/home/video-img.jpg";
 import { PauseOutlined } from "@ant-design/icons";
+import { useProductStore } from "./store/useProductStore";
 
 export default function Home() {
   const prevRef = useRef(null);
@@ -29,6 +24,11 @@ export default function Home() {
   const [swiperInstance, setSwiperInstance] = useState(null);
   const [searchProduct, setSearchProduct] = useState("");
   const [playVdo, setPlayVdo] = useState(false);
+  const { products, fetchProducts, loading } = useProductStore();
+
+  useEffect(() => {
+    fetchProducts().catch(() => toast.error("Failed to fetch products"));
+  }, [fetchProducts, loading]);
 
   const sliderData = [
     {
@@ -38,8 +38,7 @@ export default function Home() {
           Sailing Indian <br /> Excellence <br /> Across Global Waters
         </>
       ),
-      description:
-        "Delivering quality products worldwide trusted, timely, and trade-ready.",
+      description: "Delivering quality products worldwide trusted, timely, and trade-ready.",
     },
     {
       image: assets.sliderImg2,
@@ -48,8 +47,7 @@ export default function Home() {
           Delivering Speed & Precision <br /> Across Global Skies
         </>
       ),
-      description:
-        "Fast and secure air cargo services designed for time-critical global deliveries.",
+      description: "Fast and secure air cargo services designed for time-critical global deliveries.",
     },
     {
       image: assets.sliderImg3,
@@ -58,8 +56,7 @@ export default function Home() {
           Driving Trade <br /> with Trust <br /> Across Every Mile
         </>
       ),
-      description:
-        "Dependable road logistics ensuring smooth inland and cross-border transportation.",
+      description: "Dependable road logistics ensuring smooth inland and cross-border transportation.",
     },
   ];
 
@@ -73,27 +70,25 @@ export default function Home() {
   }, [swiperInstance]);
 
   const filteredProducts = useMemo(() => {
-    return ProductList.filter((item) =>
-      item.title.toLowerCase().includes(searchProduct.toLowerCase())
-    );
-  }, [searchProduct]);
+    return products?.filter((item) => item.name.toLowerCase().includes(searchProduct.toLowerCase()));
+  }, [searchProduct, products]);
 
   return (
     <>
-      <PageTitle
-        title={"Import Export Services, Global Logistics & Trade Solutions"}
-      />
+      <PageTitle title={"Import Export Services, Global Logistics & Trade Solutions"} />
 
       <section className="hero-sec">
         <div className="inner-area position-relative">
           <div className="custom-slider-btns">
             <div ref={prevRef} className="custom-swiper-prev">
               <button>
+                {" "}
                 <SliderArrowP />
               </button>
             </div>
             <div ref={nextRef} className="custom-swiper-next">
               <button>
+                {" "}
                 <SliderArrowN />
               </button>
             </div>
@@ -111,7 +106,7 @@ export default function Home() {
             {sliderData.map((slide, idx) => (
               <SwiperSlide key={idx}>
                 <div className="inr-slid">
-                  <Image src={slide.image} alt={''} className="slider-image" width={1460} height={700}/>
+                  <Image src={slide.image} alt={""} className="slider-image" width={1460} height={700} />
                   <div className="content position-relative">
                     <h2 className="sec-heading">{slide.title}</h2>
                     <p className="hero-para">{slide.description}</p>
@@ -131,19 +126,16 @@ export default function Home() {
           <div className="container">
             <div className="ft-prod-listing">
               <Swiper
-                modules={[Autoplay]}
                 loop={true}
-                autoplay={{
-                  delay: 3000,
-                  disableOnInteraction: false,
-                }}
                 spaceBetween={30}
                 breakpoints={{
-                  320: {
-                    slidesPerView: 1,
+                  0: {
+                    slidesPerView: 2,
+                    spaceBetween: 14,
                   },
                   640: {
                     slidesPerView: 2,
+                    spaceBetween: 20,
                   },
                   1024: {
                     slidesPerView: 3,
@@ -173,17 +165,10 @@ export default function Home() {
               <div className="col-md-6">
                 <div className="left-area">
                   <span className="mini-title text-white">About us</span>
-                  <h2 className="sec-heading text-white">
-                    Who are Kavishree Group
-                  </h2>
-                  <p className=" text-white">
-                    We are a leading manufacturer & exporter since 2019
-                  </p>
+                  <h2 className="sec-heading text-white">Who are Kavishree Group</h2>
+                  <p className="text-white">We are a leading manufacturer & exporter since 2019</p>
 
-                  <Link
-                    href={"/"}
-                    className="floating-btn flex-box white-outline-btn rounded-full"
-                  >
+                  <Link href={"/"} className="floating-btn flex-box white-outline-btn rounded-full">
                     <Image src={assets.OutlineArrow} alt="icon" />
                   </Link>
                 </div>
@@ -194,10 +179,10 @@ export default function Home() {
                     <Swiper
                       modules={[Autoplay]}
                       loop={true}
-                        autoplay={{
-                          delay: 2500,
-                          disableOnInteraction: false,
-                        }}
+                      autoplay={{
+                        delay: 2500,
+                        disableOnInteraction: false,
+                      }}
                       slidesPerView={1}
                     >
                       {testimonialsData?.map((item, idx) => (
@@ -209,13 +194,16 @@ export default function Home() {
                             </div>
                             <div className="content-card">
                               <p className="testm-desc">{item?.message}</p>
-                              <div className="infor">
+                              <div className="infor position-relative">
                                 <div className="avts">
                                   <Image src={item?.avatar} alt={item?.name} />
                                 </div>
                                 <div className="inf">
                                   <h4>{item?.name}</h4>
                                   <h5>{item?.company}</h5>
+                                </div>
+                                <div className="incx position-absolute " style={{right:0}}>
+                                  <RightDQouted />
                                 </div>
                               </div>
                             </div>
@@ -237,8 +225,7 @@ export default function Home() {
             <div className="heading-col text-center">
               <span className="mini-title">Our Services</span>
               <h2 className="sec-heading text-black">
-                Moving the World with Trusted, <br /> End-to-End Global
-                Logistics
+                Moving the World with Trusted, <br /> End-to-End Global Logistics
               </h2>
             </div>
             <div className="service-listing">
@@ -286,9 +273,7 @@ export default function Home() {
           <div className="container">
             <div className="vdo-box position-relative">
               <Image src={VdoPlacholder} alt="section" className="w-100" />
-              <button onClick={() => setPlayVdo(!playVdo)}>
-                {!playVdo ? <PlayIcon /> : <PauseOutlined  />}
-              </button>
+              <button onClick={() => setPlayVdo(!playVdo)}>{!playVdo ? <PlayIcon /> : <PauseOutlined />}</button>
             </div>
           </div>
         </div>
@@ -306,30 +291,21 @@ export default function Home() {
             </div>
             <div className="product-listing">
               <div className="search-box">
-                <input
-                  type="text"
-                  placeholder="Search Product / Search Categories"
-                  className="w-100"
-                  value={searchProduct}
-                  onChange={(e) => setSearchProduct(e.target.value)}
-                />
+                <input type="text" placeholder="Search Product / Search Categories" className="w-100" value={searchProduct} onChange={(e) => setSearchProduct(e.target.value)} />
 
                 <div className="icon d-flex">
                   <SearchIcon />
                 </div>
               </div>
-              <div className="product-listing">
+              <div className="product-listing-inner">
                 <Swiper
                   modules={[Autoplay]}
                   loop={true}
-                  autoplay={{
-                    delay: 3000,
-                    disableOnInteraction: false,
-                  }}
                   spaceBetween={30}
                   breakpoints={{
                     320: {
                       slidesPerView: 2,
+                      spaceBetween: 14,
                     },
                     640: {
                       slidesPerView: 3,
@@ -339,17 +315,16 @@ export default function Home() {
                     },
                   }}
                 >
-                  {filteredProducts.length > 0 ? (
-                    filteredProducts.map((item, idx) => (
+                  {filteredProducts?.length > 0 ? (
+                    filteredProducts?.map((item, idx) => (
                       <SwiperSlide key={idx}>
                         <div className="product-card">
-                          <div className="icns"></div>
-                          <h4 className="product-title">{item.title}</h4>
+                          <div className="icns">
+                            <img src={item.image} alt={item.name} />
+                          </div>
+                          <h4 className="product-title">{item.name}</h4>
                           <p className="product-desc">{item.description}</p>
-                          <Link
-                            href={`/product/${item.inqUrl}`}
-                            className="flex-box rounded-full red-outline-btn w-100"
-                          >
+                          <Link href={`/product/${item.slug}`} className="flex-box rounded-full red-outline-btn w-100">
                             Inquiry Now
                           </Link>
                         </div>
@@ -373,18 +348,13 @@ export default function Home() {
         <div className="inner-section">
           <div className="container">
             <div className="row">
-              {/* Left */}
-              <div className="col-md-6 d-flex">
+              <div className="col-lg-6 d-flex">
                 <div className="left-area">
                   <span className="mini-title">FAQS</span>
-                  <h2 className="sec-heading">
-                    Everything You Should Know About Kavishree Group & Exim
-                  </h2>
+                  <h2 className="sec-heading">Everything You Should Know About Kavishree Group & Exim</h2>
                 </div>
               </div>
-
-              {/* Right */}
-              <div className="col-md-6">
+              <div className="col-lg-6">
                 <div className="right-area faqTab-area">
                   <Tabs
                     defaultActiveKey="import"
@@ -418,7 +388,7 @@ export default function Home() {
         <div className="inner-area">
           <div className="container">
             <div>
-              <Image src={assets.homeCtaBanner} alt="section image" />
+              <Image src={assets.homeCtaBanner} className="w-100 h-auto" alt="section image" />
             </div>
           </div>
         </div>
