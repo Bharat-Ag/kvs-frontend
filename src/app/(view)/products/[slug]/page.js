@@ -11,17 +11,19 @@ import "swiper/css/thumbs";
 import "../../../../../public/assets/style/product.css";
 import PageTitle from "../../../components/PageTitle";
 import Banner from "../../../components/Banner";
-import Link from "next/link";
 import ApiService from "@/app/service/api/api.services";
 import { useParams } from "next/navigation";
 import { toast } from "react-toastify";
 import Image from "next/image";
+import CTA from "@/app/components/CTA";
+import InquiryModal from "@/app/components/InquiryModal";
 
 export default function ProductDetails() {
   const { slug } = useParams();
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const [productDt, setProductDt] = useState(null);
   const [imageGallery, setImageGallery] = useState([]);
+  const [openMdl, setOpenMdl] = useState(false);
 
   const fetchProductDetails = async () => {
     try {
@@ -43,8 +45,14 @@ export default function ProductDetails() {
     <>
       <PageTitle title={"Products Details"} />
       <Banner title={"Our Products"} image={assets.OurProductBanner} />
+      <InquiryModal
+        isOpen={openMdl}
+        setIsOpen={setOpenMdl}
+        productId={productDt?.id}
+        productImage={imageGallery?.[0]}
+      />
 
-      <section className="product-gallery">
+      <section className="product-gallery paddB">
         <div className="container">
           <div className="row">
             <div className="col-md-6">
@@ -62,13 +70,15 @@ export default function ProductDetails() {
               >
                 {imageGallery.map((img, index) => (
                   <SwiperSlide key={index}>
-                    <Image
-                      src={img}
-                      alt={`product-${index}`}
-                      width={570}
-                      height={570}
-                      className="w-100 h-auto"
-                    />
+                    <div className="img-box">
+                      <Image
+                        src={img}
+                        alt={`product-${index}`}
+                        width={570}
+                        height={570}
+                        className="w-100 h-100"
+                      />
+                    </div>
                   </SwiperSlide>
                 ))}
               </Swiper>
@@ -77,21 +87,25 @@ export default function ProductDetails() {
                 onSwiper={setThumbsSwiper}
                 loop={imageGallery.length > 1}
                 spaceBetween={10}
-                slidesPerView={4}
+                slidesPerView={3}
                 freeMode
                 watchSlidesProgress
                 modules={[FreeMode, Thumbs]}
-                className="mySwiper"
+                className={`mySwiperSmall ${
+                  imageGallery.length > 3 ? "" : "small-mode-swiper"
+                }`}
               >
                 {imageGallery.map((img, index) => (
                   <SwiperSlide key={index}>
-                    <Image
-                      src={img}
-                      alt={`thumb-${index}`}
-                      width={120}
-                      height={120}
-                      className="w-100 h-auto"
-                    />
+                    <div className="img-box">
+                      <Image
+                        src={img}
+                        alt={`thumb-${index}`}
+                        width={120}
+                        height={120}
+                        className="w-100 h-100"
+                      />
+                    </div>
                   </SwiperSlide>
                 ))}
               </Swiper>
@@ -136,13 +150,18 @@ export default function ProductDetails() {
                   </div>
                 </div>
               </div>
-              <button className="flex-box rounded-full red-outline-btn">
+              <button
+                className="flex-box rounded-full red-outline-btn"
+                onClick={() => setOpenMdl(true)}
+              >
                 Inquiry Now
               </button>
             </div>
           </div>
         </div>
       </section>
+
+      <CTA />
     </>
   );
 }

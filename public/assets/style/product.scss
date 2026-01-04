@@ -38,4 +38,19 @@
 
 .product-gallery{
   .red-outline-btn{margin-top: 20px; height: 40px; width: 270px;}
+  .mySwiper2{
+    .img-box{height: 570px; border-radius: 30px; overflow: hidden;}
+    img{object-fit: cover;}
+    
+  }
+  .mySwiperSmall {
+    margin-top: 30px;
+    .img-box{height: 170px; border-radius: 20px; overflow: hidden;}
+    img{object-fit: cover;}
+    &.small-mode-swiper{
+      .swiper-wrapper{
+        justify-content: center;
+      }
+    }
+  }
 }

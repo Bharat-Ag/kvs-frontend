@@ -40,4 +40,28 @@
   margin-top: 20px;
   height: 40px;
   width: 270px;
+}
+.product-gallery .mySwiper2 .img-box {
+  height: 570px;
+  border-radius: 30px;
+  overflow: hidden;
+}
+.product-gallery .mySwiper2 img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.product-gallery .mySwiperSmall {
+  margin-top: 30px;
+}
+.product-gallery .mySwiperSmall .img-box {
+  height: 170px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.product-gallery .mySwiperSmall img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.product-gallery .mySwiperSmall.small-mode-swiper .swiper-wrapper {
+  justify-content: center;
 }/*# sourceMappingURL=product.css.map */
