@@ -40,6 +40,10 @@ import DoubleQuote from "../images/quote-icon.svg"
 import OurProductBanner from "../images/products/product-bg.jpg"
 import productHero from "../images/products/product-bg.jpg";
 
+import ContactIcon from "../images/contact-icon.png"
+import MailIcon from "../images/email-icon.png"
+import MapperIcon from "../images/mapper-icon.png"
+
 export const DDIcon = () => {
   return (
     <svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg"
@@ -102,5 +106,5 @@ export const PlayIcon = ()=>{
 
 export const assets = {
   Client1, Client2, Client3, Client4, Client5, FAQHero, FeatP1, FeatP2, FeatP3, OutlineArrow, TestimImg, TradeIcon, AirCargoIcon, ExportIcon, OceanIcon,RoadIcon, ImportIcon, siteLogo, bigLogo, facebookIcon, twitterIcon, instagramIcon, linkDnIcon, homeCtaBanner, aboutHero, aboutMain1, aboutMain2, sliderImg1, sliderImg2, sliderImg3, aboutImportExport, testimonialImage1, Avatar1, Avatar2, Avatar3, Avatar4, Avatar5,
-  DoubleQuote , OurProductBanner, productHero
+  DoubleQuote , OurProductBanner, productHero, ContactIcon, MailIcon, MapperIcon
 };

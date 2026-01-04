@@ -41,13 +41,6 @@
   margin-bottom: 17px;
 }
 
-.cmn-text {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  color: #666;
-}
-
 .expertise-wrap {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -168,7 +161,6 @@
   font-weight: 500;
 }
 
-/* CONTENT */
 .shipping-content {
   width: calc(100% / 2 - (2 - 1) * 30px / 2);
 }
