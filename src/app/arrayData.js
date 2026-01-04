@@ -21,42 +21,97 @@ export const OurServicesData = [
     description:
       "Kavishree delivers reliable sea-freight solutions for global shipments. From port loading to international delivery, we ensure smooth operations worldwide.",
     icons: assets.OceanIcon,
+    heroImage: assets.servicesOceanHero,
     url: "ocean-logistics",
+    detail:{
+      heading:"Navigating Worldwide Trade Routes.",
+      description:[
+      "Ocean logistics is the foundation of global trade, providing a reliable and cost-effective solution for moving goods across international markets. Kavishree Exim offers comprehensive sea-freight services designed to handle shipments of all sizes, from full container loads (FCL) to less-than-container loads (LCL) and specialized cargo.",
+      "We manage the complete shipping lifecycle including export documentation, customs clearance, port handling, cargo coordination, and final delivery. With a strong network of shipping partners and port authorities, Kavishree Exim ensures every shipment moves smoothly through global sea routes."
+      ],
+      image:assets.servicesOceanImg
+    }
   },
   {
     title: "Air Cargo",
     description:
       "Kavishree provides fast and secure air logistics for time-critical goods. Your shipments reach global destinations with unmatched speed and precision.",
     icons: assets.AirCargoIcon,
+    heroImage: assets.servicesAirHero,
     url: "air-cargo",
+    detail:{
+      heading:"Fast Routes to Global Markets",
+      description:[
+      "Air cargo is the fastest and most efficient solution for time-sensitive and high-value shipments across global markets. Kavishree Exim provides reliable air freight services designed to meet urgent delivery requirements while maintaining the highest standards of safety and compliance.",
+      "From priority cargo handling to international airport coordination, we manage every stage of the air shipping process. Our services include shipment planning, export documentation, customs clearance, airline coordination, and final delivery, ensuring a smooth and hassle-free experience for our clients."
+      ],
+      image:assets.servicesAirImg
+    }
   },
   {
     title: "Road Freight",
     description:
       "Kavishree offers dependable by-road transport for domestic and cross-border movement. Our ground logistics ensure timely and safe delivery every time.",
     icons: assets.RoadIcon,
+    heroImage: assets.servicesRoadHero,
     url: "road-freight",
+    detail:{
+      heading:"Driving Trade Beyond Borders.",
+      description:[
+      "Road freight plays a vital role in connecting supply chains across domestic and cross-border routes. Kavishree Exim provides dependable road freight solutions designed to ensure safe, efficient, and timely movement of goods at every stage.",
+      "From inland pickup and port connectivity to last-mile delivery, we manage the entire transportation process with precision and care. Our logistics network is supported by experienced transport partners, optimized routing, and strict handling standards.",
+      "By focusing on reliability, transparency, and on-time performance, Kavishree Exim helps businesses maintain smooth operations and uninterrupted trade flows, keeping your cargo moving confidently across regions."
+      ],
+      image:assets.servicesRoadImg
+    }
   },
   {
     title: "Export Solutions",
     description:
       "Kavishree delivers complete export solutions tailored to global market requirements. From sourcing to shipment dispatch, we ensure quality and compliance throughout.",
     icons: assets.ExportIcon,
+    heroImage: assets.servicesExportHero,
     url: "export-solutions",
+    detail:{
+      heading:"Delivering Indian Quality to Global Markets.",
+      description:[
+      "Export solutions are the backbone of international trade, enabling businesses to reach customers across the world. Kavishree Exim provides end-to-end export services designed to ensure smooth, compliant, and efficient movement of goods from India to global destinations.",
+      "From product sourcing and quality checks to packaging, documentation, and shipment coordination, we manage every stage of the export process. Our team ensures that all exports meet international regulations and destination-specific requirements."
+      ],
+      image:assets.servicesExportImg
+    }
   },
   {
     title: "Import Services",
     description:
       "Kavishree provides efficient import services aligned with international trade standards. From product sourcing to customs clearance, we ensure a seamless import process.",
     icons: assets.ImportIcon,
+    heroImage: assets.servicesImportHero,
     url: "import-services",
+    detail:{
+      heading:"Simplifying Global Sourcing for Your Business",
+      description:[
+      "Import services enable businesses to access products and materials from international markets with ease and confidence. Kavishree Exim offers comprehensive import solutions designed to ensure smooth procurement, regulatory compliance, and timely delivery.",
+      "From global supplier coordination and shipment planning to customs clearance and final distribution, we manage the entire import process end-to-end. Our experienced team ensures all imports comply with international trade regulations and local requirements."
+      ],
+      image:assets.servicesImportImg
+    }
   },
   {
     title: "Trade Documentation",
     description:
       "Kavishree manages accurate and compliant trade documentation for every shipment. From invoices to regulatory paperwork, we ensure hassle-free global transactions.",
     icons: assets.TradeIcon,
+    heroImage: assets.servicesTradeHero,
     url: "trade-documentation",
+    detail:{
+      heading:"Accuracy That Keeps Global Trade Moving.",
+      description:[
+      "Trade documentation is a critical part of international logistics, ensuring every shipment complies with global trade regulations. Kavishree Exim provides complete documentation support to facilitate smooth, transparent, and hassle-free import and export operations.",
+      "We handle all essential trade documents including invoices, packing lists, HS codes, shipping instructions, and compliance paperwork. Our team ensures accuracy, timely preparation, and adherence to destination-specific regulatory requirements, reducing the risk of delays or penalties."
+      ],
+      image:assets.servicesTradeImg
+    }
   },
 ];
 

@@ -1,1 +1,14 @@
 @import "mixin.scss";
+
+.services-blk{
+  .service-listing{
+      display:flex;
+      gap:30px;
+      align-items:center;
+      flex-wrap:wrap;
+  }
+
+  .service-list{
+       width: calc(100% / 3 - (2 * 30px) / 3);
+  }
+}

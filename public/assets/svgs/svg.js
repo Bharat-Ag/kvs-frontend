@@ -25,7 +25,6 @@ import Client3 from "../images/client3.png"
 import Client4 from "../images/client4.png"
 import Client5 from "../images/client5.png"
 import TestimImg from "../images/home/TESTIMONALS.jpg"
-
 import aboutHero from "../images/about/about-bg.jpg";
 import aboutMain1 from "../images/about/about-main1.jpg";
 import aboutMain2 from "../images/about/about-main2.jpg";
@@ -39,10 +38,22 @@ import Avatar5 from "../images/client5.png";
 import DoubleQuote from "../images/quote-icon.svg"
 import OurProductBanner from "../images/products/product-bg.jpg"
 import productHero from "../images/products/product-bg.jpg";
-
 import ContactIcon from "../images/contact-icon.png"
 import MailIcon from "../images/email-icon.png"
 import MapperIcon from "../images/mapper-icon.png"
+import servicesHero from "../images/services/ser-bg.jpg"
+import servicesOceanHero from "../images/services/ser-ocean-bg.jpg"
+import servicesAirHero from "../images/services/ser-air-bg.jpg" 
+import servicesRoadHero from "../images/services/ser-road-bg.jpg"
+import servicesExportHero from "../images/services/ser-export-bg.jpg" 
+import servicesImportHero from "../images/services/ser-import-bg.jpg" 
+import servicesTradeHero from "../images/services/ser-trade-bg.jpg"
+import servicesOceanImg from "../images/services/ser-ocean-img.jpg"
+import servicesAirImg from "../images/services/ser-air-img.jpg" 
+import servicesRoadImg from "../images/services/ser-road-img.jpg"
+import servicesExportImg from "../images/services/ser-export-img.jpg" 
+import servicesImportImg from "../images/services/ser-import-img.jpg" 
+import servicesTradeImg from "../images/services/ser-trade-img.jpg"  
 
 export const DDIcon = () => {
   return (
@@ -103,8 +114,9 @@ export const PlayIcon = ()=>{
   )
 }
 
-
 export const assets = {
   Client1, Client2, Client3, Client4, Client5, FAQHero, FeatP1, FeatP2, FeatP3, OutlineArrow, TestimImg, TradeIcon, AirCargoIcon, ExportIcon, OceanIcon,RoadIcon, ImportIcon, siteLogo, bigLogo, facebookIcon, twitterIcon, instagramIcon, linkDnIcon, homeCtaBanner, aboutHero, aboutMain1, aboutMain2, sliderImg1, sliderImg2, sliderImg3, aboutImportExport, testimonialImage1, Avatar1, Avatar2, Avatar3, Avatar4, Avatar5,
-  DoubleQuote , OurProductBanner, productHero, ContactIcon, MailIcon, MapperIcon
+  DoubleQuote , OurProductBanner, productHero, ContactIcon, MailIcon, MapperIcon, servicesHero, servicesOceanHero, servicesAirHero, servicesRoadHero, servicesExportHero, servicesImportHero, servicesTradeHero, servicesOceanImg, servicesAirImg, servicesRoadImg, servicesExportImg, servicesImportImg, servicesTradeImg,  
 };
+
+

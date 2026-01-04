@@ -1,1 +1,9 @@
-/*# sourceMappingURL=services.css.map */
+.services-blk .service-listing {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.services-blk .service-list {
+  width: calc(33.3333333333% - 20px);
+}/*# sourceMappingURL=services.css.map */
