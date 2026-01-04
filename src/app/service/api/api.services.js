@@ -26,7 +26,7 @@ const ApiService = {
   },
 
   /* -------- INQUIRY -------- */
-  submitInquiry(data) {
+  async submitInquiry(data) {
     return apiClient.post(apiRoutes.inquiry.create, data).then(res => res.data);
   },
 };

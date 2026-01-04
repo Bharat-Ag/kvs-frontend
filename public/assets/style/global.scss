@@ -354,7 +354,6 @@ nav {
   min-height:500px;
 }
 
-/* LEFT IMAGE */
 .testimonial-image {
   width: 45%;
 
@@ -365,16 +364,27 @@ nav {
   }
 }
 
-/* RIGHT CONTENT */
 .testimonial-content {
   width: 55%;
-  padding: 50px;
+  padding: 50px 50px 0 50px;
   color: #fff;
   position: relative;
   display: flex;
   flex-direction: column;
   margin-top: 50px;
   gap:17px;
+
+  .swiper{
+    width:100%;
+    padding-bottom: 60px;
+  }
+}
+
+.testimonial-content-inner{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap:17px;
 }
 
 .testimonial-message {
@@ -397,7 +407,6 @@ nav {
   }
 
   .name {
-    font-family: Poppins;
     font-weight: 600;
     font-size: 18px;
     line-height:27px;
@@ -412,9 +421,6 @@ nav {
 
 .testimonial-swiper {
   .swiper-pagination {
-    bottom: 95px !important;
-    left: 369px !important;
-
     .swiper-pagination-bullet {
       background: #414141;
       opacity: 1;
@@ -429,15 +435,64 @@ nav {
 }
 
 .input-style{
-    background: '#F2F2F2';
+    background: #F2F2F2 !important;
     height: 50px;
-    border-radius: 10px;
+    border-radius: 10px !important;
+    border:0 !important;
 }
 
 .label-style{
     font-size: 16px;
     color: #666666;
     margin-bottom: 10px;
-    display: 'block';
+}
 
+.inquiry-form{
+  .inquiry-block{
+    display:flex;
+    align-items: center;
+    flex-wrap:wrap;
+    gap:30px;
+    .form-block{
+      width: calc(100% / 2 - (1 * 30px) / 2);
+    }
+  }
+  .inquiry-btn{
+    margin-top:30px;
+    .red-btn{
+      background-color: #cc0001 !important;
+      color: #fff !important;
+      padding: 5px !important;
+      height: 50px !important;
+      border-radius: 50px !important;
+      min-width: 150px;
+      span{
+        font-size:16px;
+        font-weight:600;
+      }
+    }
+  }
+}
+
+.errors{
+  font-size: 12px;
+  color:$redColor;
+}
+
+.no-antd-style{
+  border:0 !important;
+  background-color:transparent !important;
+  border-radius:0 !important;
+}
+
+.captcha-box{
+  font-size: 40px;
+  font-style: italic;
+}
+
+.cmn-text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: $text-666;
 }

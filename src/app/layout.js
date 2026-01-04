@@ -2,14 +2,14 @@
 import "antd/dist/reset.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../public/assets/style/global.css";
-
+import "@fortawesome/fontawesome-free/css/all.min.css";
 import { StyleProvider } from "@ant-design/cssinjs";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import { Poppins } from "next/font/google";
 
 import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css"; // import the styles
+import "react-toastify/dist/ReactToastify.css";
 
 const poppins = Poppins({
   subsets: ["latin"],
