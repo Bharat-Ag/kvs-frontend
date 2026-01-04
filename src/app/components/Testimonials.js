@@ -6,9 +6,9 @@ import Image from "next/image";
 import { testimonialsData } from "../arrayData";
 import { assets } from "../../../public/assets/svgs/svg";
 
-const Testimonials = () => {
+const Testimonials = ({className=''}) => {
   return (
-    <section className="testimonials paddB">
+    <section className={`testimonials paddB ${className}`}>
         <div className="inner-area">
             <div className="testimonial-card">
                 <div className="testimonial-image">

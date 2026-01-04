@@ -6,4 +6,65 @@
 }
 .services-blk .service-list {
   width: calc(33.3333333333% - 20px);
+}
+
+.service-vertical-tabs.ant-tabs .ant-tabs-ink-bar {
+  display: none;
+}
+.service-vertical-tabs.ant-tabs .ant-tabs-tabpane {
+  padding-left: 30px;
+}
+.service-vertical-tabs.ant-tabs .ant-tabs-content-holder {
+  border: 0;
+}
+.service-vertical-tabs.ant-tabs .ant-tabs-tab {
+  height: 80px;
+  width: 270px;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 20px;
+  color: #444;
+}
+.service-vertical-tabs.ant-tabs .ant-tabs-tab.ant-tabs-tab-active {
+  background: #cc0001;
+}
+.service-vertical-tabs.ant-tabs .ant-tabs-tab.active, .service-vertical-tabs.ant-tabs .ant-tabs-tab:active, .service-vertical-tabs.ant-tabs .ant-tabs-tab:hover {
+  color: #222;
+}
+.service-vertical-tabs.ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: #fff;
+}
+.service-vertical-tabs.ant-tabs-left > .ant-tabs-nav .ant-tabs-tab + .ant-tabs-tab {
+  margin-top: 0;
+  height: 80px;
+  width: 270px;
+}
+.service-vertical-tabs.ant-tabs-left > .ant-tabs-content-holder > .ant-tabs-content > .ant-tabs-tabpane {
+  padding-left: 30px;
+}
+
+.service-content {
+  display: flex;
+  gap: 30px;
+}
+.service-content .service-image {
+  max-width: 370px;
+  height: auto;
+  border-radius: 40px;
+  overflow: hidden;
+  min-width: 370px;
+}
+.service-content .service-image img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.service-content .service-text h2 {
+  margin-bottom: 10px;
+}
+.service-content .service-text p {
+  font-size: 16px;
+  color: #666;
+  line-height: 28px;
 }/*# sourceMappingURL=services.css.map */

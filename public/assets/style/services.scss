@@ -12,3 +12,34 @@
        width: calc(100% / 3 - (2 * 30px) / 3);
   }
 }
+
+.service-vertical-tabs {
+    &.ant-tabs {
+        .ant-tabs-ink-bar {display: none;}
+        .ant-tabs-tabpane{padding-left: 30px;}
+        .ant-tabs-content-holder {border: 0;}
+        .ant-tabs-tab {
+            height: 80px;width: 270px;border-radius: 10px;font-weight: 500;font-size: 20px;color: $text-333;
+            &.ant-tabs-tab-active{background: $redColor;}
+            &.active,
+            &:active,
+            &:hover{color: $text-222;}
+        }
+        .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn{color: #fff;}
+    }
+
+    &.ant-tabs-left>.ant-tabs-nav .ant-tabs-tab+.ant-tabs-tab { margin-top: 0; height: 80px; width: 270px; }
+    &.ant-tabs-left >.ant-tabs-content-holder >.ant-tabs-content>.ant-tabs-tabpane{padding-left: 30px;}
+}
+
+.service-content{
+    display: flex;gap: 30px;
+    .service-image {
+        max-width: 370px; height: auto; border-radius: 40px; overflow: hidden; min-width: 370px;
+        img{@include image-fill;}
+    }
+    .service-text{
+        h2{margin-bottom: 10px;}
+        p{font-size: 16px;color: $text-666;line-height: 28px;}
+    }
+}
