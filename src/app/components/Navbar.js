@@ -22,7 +22,7 @@ export default function Navbar() {
     { title: "Products", href: "/products" },
     { title: "FAQs", href: "/faqs" },
     { title: "About Us", href: "/about" },
-    { title: "Blogs", href: "/blogs" },
+    { title: "Blogs", href: "/blog" },
   ];
 
   const servicesMenu = {

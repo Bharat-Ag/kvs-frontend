@@ -50,6 +50,7 @@ export default function ProductDetails() {
         setIsOpen={setOpenMdl}
         productId={productDt?.id}
         productImage={imageGallery?.[0]}
+        productName={productDt?.name}
       />
 
       <section className="product-gallery paddB">

@@ -14,17 +14,17 @@
 }
 .table-grid .tb-col {
   display: flex;
-  font-size: 15px;
+  font-size: 18px;
 }
 .table-grid .tb-col .label {
-  min-width: 184px;
+  min-width: 214px;
   text-align: center;
   font-weight: 500;
   border-right: 1px solid #121212;
   text-transform: uppercase;
 }
 .table-grid .tb-col P {
-  min-width: 184px;
+  min-width: 214px;
   text-align: center;
   flex-grow: 1;
   color: #222;

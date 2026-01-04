@@ -14,15 +14,15 @@
   width: fit-content;
   .tb-col {
     display: flex;
-    font-size: 15px;
+    font-size: 18px;
     .label {
-      min-width: 184px;
+      min-width: 214px;
       text-align: center;
       font-weight: 500;
        border-right: 1px solid #121212;
        text-transform: uppercase;
     }
-    P {min-width: 184px;
+    P {min-width: 214px;
       text-align: center;
       flex-grow: 1;color: #222;
       padding-inline: 5px;max-width: 350px;
