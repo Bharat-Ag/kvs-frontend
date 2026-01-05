@@ -3,14 +3,29 @@
   gap: 30px;
   flex-wrap: wrap;
 }
+@media (max-width: 991px) {
+  .about-wrapper {
+    flex-direction: column;
+  }
+}
 
 .about-images {
   position: relative;
   width: calc(50% - 15px);
 }
+@media (max-width: 991px) {
+  .about-images {
+    width: 100%;
+  }
+}
 
 .about-content {
   width: calc(50% - 15px);
+}
+@media (max-width: 991px) {
+  .about-content {
+    width: 100%;
+  }
 }
 
 .about-images .img {
@@ -46,24 +61,53 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 20px 30px;
 }
+@media (max-width: 575px) {
+  .expertise-wrap {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 
 .expertise-head {
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 500;
+}
+@media (max-width: 991px) {
+  .expertise-head {
+    font-size: 18px;
+    margin-bottom: 5px;
+    line-height: normal;
+  }
+}
+@media (max-width: 575px) {
+  .expertise-head {
+    font-size: 16px;
+    margin-bottom: 0px;
+  }
+}
+
+.about-progress.ant-progress-line .ant-progress-rail, .about-progress.ant-progress-line .ant-progress-track {
+  height: 20px !important;
+}
+@media (max-width: 991px) {
+  .about-progress.ant-progress-line .ant-progress-rail, .about-progress.ant-progress-line .ant-progress-track {
+    height: 15px !important;
+  }
+}
+@media (max-width: 575px) {
+  .about-progress.ant-progress-line .ant-progress-rail, .about-progress.ant-progress-line .ant-progress-track {
+    height: 11px !important;
+  }
 }
 
 .exp-name {
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 30px;
   color: #444;
 }
 
 .exp-percent {
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 30px;
   color: #999;
 }
 
@@ -71,9 +115,20 @@
 .expertise .sec-heading {
   margin-bottom: 30px;
 }
+@media (max-width: 767px) {
+  .about-main .sec-heading,
+  .expertise .sec-heading {
+    margin-bottom: 18px;
+  }
+}
 
 .about-main .cmn-text {
   max-width: 570px;
+}
+@media (max-width: 991px) {
+  .about-main .cmn-text {
+    max-width: 100%;
+  }
 }
 
 .certi-wrapper {
@@ -82,9 +137,19 @@
   align-items: center;
   gap: 30px;
 }
+@media (max-width: 575px) {
+  .certi-wrapper {
+    gap: 10px;
+  }
+}
 
 .certi-block {
   width: calc(33.3333333333% - 20px);
+}
+@media (max-width: 575px) {
+  .certi-block {
+    width: calc(33.3333333333% - 6.6666666667px);
+  }
 }
 
 .certi-block img {
@@ -93,9 +158,19 @@
   border: 13px solid #000;
   cursor: pointer;
 }
+@media (max-width: 575px) {
+  .certi-block img {
+    border-width: 6px;
+  }
+}
 
 .certificate .sec-heading {
   margin-bottom: 40px;
+}
+@media (max-width: 575px) {
+  .certificate .sec-heading {
+    margin-bottom: 30px;
+  }
 }
 
 .slbCloseBtn {
@@ -117,6 +192,11 @@
   align-items: center;
   flex-wrap: wrap;
 }
+@media (max-width: 991px) {
+  .shipping-wrapper {
+    flex-direction: column;
+  }
+}
 
 /* IMAGE */
 .shipping-image {
@@ -125,11 +205,21 @@
   height: 570px;
 }
 .shipping-image img {
-  width: 100%;
   height: 100%;
+  width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 40px;
+}
+@media (max-width: 991px) {
+  .shipping-image {
+    width: 100%;
+  }
+}
+@media (max-width: 575px) {
+  .shipping-image {
+    height: 370px;
+  }
 }
 
 /* EXPERIENCE BADGE */
@@ -160,12 +250,39 @@
   font-size: 18px;
   font-weight: 500;
 }
+@media (max-width: 575px) {
+  .exp-badge {
+    min-width: -moz-fit-content;
+    min-width: fit-content;
+    min-height: auto;
+    padding: 10% 5%;
+    bottom: 20px;
+  }
+  .exp-badge .exp-num {
+    font-size: 55px;
+    line-height: 1.2;
+  }
+  .exp-badge .exp-num span {
+    font-size: 34px;
+  }
+  .exp-badge .exp-text {
+    font-size: 14px;
+  }
+}
 
 .shipping-content {
   width: calc(100% / 2 - (2 - 1) * 30px / 2);
 }
 .shipping-content .wrapper {
   max-width: 570px;
+}
+@media (max-width: 991px) {
+  .shipping-content {
+    width: 100%;
+  }
+  .shipping-content .wrapper {
+    max-width: 100%;
+  }
 }
 
 .divider {
@@ -215,4 +332,12 @@
   justify-content: space-between;
   margin-top: 75px;
   margin-bottom: 30px;
+}
+@media (max-width: 575px) {
+  .shipping-mid {
+    flex-direction: column;
+    margin-top: 50px;
+    align-items: flex-start;
+    gap: 25px;
+  }
 }/*# sourceMappingURL=about.css.map */

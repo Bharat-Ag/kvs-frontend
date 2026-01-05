@@ -23,9 +23,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={poppins.variable}>
         <StyleProvider hashPriority="high">
-          {/* <Navbar /> */}
+          <Navbar />
           <main>{children}</main>
-          {/* <Footer />
+          <Footer />
           <ToastContainer 
             position="bottom-right"
             autoClose={3000}
@@ -36,7 +36,7 @@ export default function RootLayout({ children }) {
             pauseOnFocusLoss
             draggable
             pauseOnHover
-          /> */}
+          />
         </StyleProvider>
       </body>
     </html>

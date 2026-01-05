@@ -13,7 +13,7 @@ export default function Contact() {
     <>
       <PageTitle title={"Contact"} />
 
-      {/*<Banner title="Contact Us" image={assets.aboutHero}/> */}
+      <Banner title="Contact Us" image={assets.aboutHero}/>
 
       <section className="contact-block paddB">
         <div className="inner-area">
@@ -79,7 +79,7 @@ export default function Contact() {
 
       <Testimonials/>
 
-      {/* <CTA title={"Start Your Global Trade Journey"} /> */}
+      <CTA title={"Start Your Global Trade Journey"} />
     </>
   );
 }

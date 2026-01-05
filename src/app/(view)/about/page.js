@@ -84,7 +84,7 @@ export default function About() {
 
   return (
     <>
-      <PageTitle title={"About"} />
+      <PageTitle title={"About us"} />
 
       <Banner title="About Us" image={assets.aboutHero}/>
 
@@ -143,7 +143,7 @@ export default function About() {
                   showInfo={false}
                   strokeColor="#cc0001"
                   railColor="#e5e5e5"
-                  strokeWidth={20}
+                  className="about-progress"
                 />
               </div>
             ))}
@@ -207,9 +207,7 @@ export default function About() {
               {/* RIGHT CONTENT */}
               <div className="shipping-content">
                 <span className="mini-title">Your Trusted Shipping Partner</span>
-                <h2 className="sec-heading">
-                  Reliable Import–Export Services, Worldwide
-                </h2>
+                <h2 className="sec-heading">Reliable Import-Export Services, Worldwide</h2>
                 <div className="wrapper">
                   <div className="shipping-mid">
                     <a href="#" className="red-btn">Get Started Now</a>

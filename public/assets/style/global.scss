@@ -43,8 +43,9 @@ input {border: 0;resize: none;outline: none;background: transparent;padding: 0;}
 .red-btn:hover {background: $redDarkColor;}
 .sec-heading {
   font-weight: 500; font-size: 50px; color: $text-333; line-height: 75px;
-  @include phone{font-size: 43px;line-height: 56px;}
-  @include phone-xr{font-size: 25px;line-height: 35px;}
+  @include tab{font-size: 43px;line-height: 56px;}
+  @include phone{font-size: 37px; line-height: 48px;}
+  @include phone-xr{font-size: 27px;line-height: 35px;}
 }
 
 .text-black {color: $textBlack;}
@@ -493,110 +494,76 @@ nav {
 }
 
 .cmn-dd-theme{
-    &.ant-dropdown {
-        .ant-dropdown-menu .ant-dropdown-menu-item{
-            padding: 0;            
-        }
-        .ant-dropdown-menu .ant-dropdown-menu-title-content >a{
-            padding: 3px 13px;width: 100%;display: inline-flex;border-radius: 4px;
-            &:hover{
-                background: $redColor;
-                color: $textWhite;
-            }
-        }
+  &.ant-dropdown {
+    .ant-dropdown-menu .ant-dropdown-menu-item{
+        padding: 0;            
     }
+    .ant-dropdown-menu .ant-dropdown-menu-title-content >a{
+      padding: 3px 13px;width: 100%;display: inline-flex;border-radius: 4px;
+      &:hover{background: $redColor;color: $textWhite;}
+    }
+  }
 }
 .testimonials{
   padding-inline: 20px;
+  @include phone-xr{padding-inline: 12px;}
 }
 
 .testimonial-card {
-  display: flex;
-  background: #1c1c1c;
-  border-radius: 24px;
-  overflow: hidden;
-  min-height:500px;
+  display: flex;background: #1c1c1c;border-radius: 24px;overflow: hidden;min-height:500px;
+  @include phone{min-height: 445px;}
+  @include phone-xr{min-height: fit-content;}
 }
 
 .testimonial-image {
   width: 45%;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+  img {@include image-fill;}
+  @include phone-xs{display: none;}
 }
 
 .testimonial-content {
-  width: 55%;
-  padding: 50px 50px 0 50px;
-  color: #fff;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  margin-top: 50px;
-  gap:17px;
-
+  width: 55%; padding: 50px 50px 0 50px; color: #fff; position: relative; display: flex; flex-direction: column; margin-top: 50px; gap:17px;
   .swiper{
-    width:100%;
-    padding-bottom: 60px;
+    width:100%;padding-bottom: 60px;
+    @include phone-xr{padding-bottom: 43px;}
   }
-  @include tab{
-    margin-top: 22px;
-  }
-  @include phone{
-      padding: 35px;
+  @include tab{margin-top: 22px;}
+  @include phone{padding: 35px;}
+  @include phone-xs{width: 100%;}
+  @include phone-xr{margin-top: 0;padding: 35px 30px;}
+  .quote-icon{
+    @include phone-xr{
+      img{max-width: 35px;}
+    }
   }
 }
 
 .testimonial-content-inner{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap:17px;
+  position: relative; display: flex; flex-direction: column; gap:17px;
 }
 
 .testimonial-message {
-  font-weight: 500;
-  font-size: 26px;
-  line-height: 39px;
-  max-width:575px;
+  font-weight: 500;font-size: 26px;line-height: 39px;max-width:575px;
+  @include phone{font-size: 20px;line-height: 34px;}
+  @include phone-xr{font-size: 16px; line-height: 1.7;}
 }
 
 .testimonial-user {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-
-  .avatar {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-
+  display: flex;align-items: center;gap: 14px;
+  .avatar {width: 44px; height: 44px; border-radius: 50%; object-fit: cover;}
   .name {
-    font-weight: 600;
-    font-size: 18px;
-    line-height:27px;
-    margin: 0;
+   font-weight: 600; font-size: 18px; line-height:27px; margin: 0;
+    @include phone-xr{font-size: 16px;line-height: normal;}
   }
 
-  .company {
-    font-size: 14px;
-    color: #aaa;
-  }
+  .company {font-size: 14px;color: #aaa;}
+  
 }
 
 .testimonial-swiper {
   .swiper-pagination {
     .swiper-pagination-bullet {
-      background: #414141;
-      opacity: 1;
-      width:10px !important;
-      height :10px !important;
-
+      background: #414141;opacity: 1;width:10px !important;height :10px !important;
       &-active {
         background: $redColor;
       }

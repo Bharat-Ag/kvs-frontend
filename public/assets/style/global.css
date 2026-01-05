@@ -90,15 +90,21 @@ input {
   color: #444;
   line-height: 75px;
 }
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   .sec-heading {
     font-size: 43px;
     line-height: 56px;
   }
 }
+@media (max-width: 767px) {
+  .sec-heading {
+    font-size: 37px;
+    line-height: 48px;
+  }
+}
 @media (max-width: 480px) {
   .sec-heading {
-    font-size: 25px;
+    font-size: 27px;
     line-height: 35px;
   }
 }
@@ -1087,6 +1093,11 @@ nav .nav-open .mid-navlinks {
 .testimonials {
   padding-inline: 20px;
 }
+@media (max-width: 480px) {
+  .testimonials {
+    padding-inline: 12px;
+  }
+}
 
 .testimonial-card {
   display: flex;
@@ -1095,15 +1106,31 @@ nav .nav-open .mid-navlinks {
   overflow: hidden;
   min-height: 500px;
 }
+@media (max-width: 767px) {
+  .testimonial-card {
+    min-height: 445px;
+  }
+}
+@media (max-width: 480px) {
+  .testimonial-card {
+    min-height: -moz-fit-content;
+    min-height: fit-content;
+  }
+}
 
 .testimonial-image {
   width: 45%;
 }
 .testimonial-image img {
-  width: 100%;
   height: 100%;
+  width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+@media (max-width: 575px) {
+  .testimonial-image {
+    display: none;
+  }
 }
 
 .testimonial-content {
@@ -1120,6 +1147,11 @@ nav .nav-open .mid-navlinks {
   width: 100%;
   padding-bottom: 60px;
 }
+@media (max-width: 480px) {
+  .testimonial-content .swiper {
+    padding-bottom: 43px;
+  }
+}
 @media (max-width: 991px) {
   .testimonial-content {
     margin-top: 22px;
@@ -1128,6 +1160,22 @@ nav .nav-open .mid-navlinks {
 @media (max-width: 767px) {
   .testimonial-content {
     padding: 35px;
+  }
+}
+@media (max-width: 575px) {
+  .testimonial-content {
+    width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  .testimonial-content {
+    margin-top: 0;
+    padding: 35px 30px;
+  }
+}
+@media (max-width: 480px) {
+  .testimonial-content .quote-icon img {
+    max-width: 35px;
   }
 }
 
@@ -1143,6 +1191,18 @@ nav .nav-open .mid-navlinks {
   font-size: 26px;
   line-height: 39px;
   max-width: 575px;
+}
+@media (max-width: 767px) {
+  .testimonial-message {
+    font-size: 20px;
+    line-height: 34px;
+  }
+}
+@media (max-width: 480px) {
+  .testimonial-message {
+    font-size: 16px;
+    line-height: 1.7;
+  }
 }
 
 .testimonial-user {
@@ -1162,6 +1222,12 @@ nav .nav-open .mid-navlinks {
   font-size: 18px;
   line-height: 27px;
   margin: 0;
+}
+@media (max-width: 480px) {
+  .testimonial-user .name {
+    font-size: 16px;
+    line-height: normal;
+  }
 }
 .testimonial-user .company {
   font-size: 14px;

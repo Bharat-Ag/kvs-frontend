@@ -4,15 +4,21 @@
   display: flex;
   gap: 30px;
   flex-wrap: wrap;
+
+  @include tab{
+    flex-direction: column;
+  }
 }
 
 .about-images {
   position: relative;
   width: calc(50% - 15px);
+  @include tab{width: 100%;}
 }
 
 .about-content {
   width: calc(50% - 15px);
+  @include tab{width: 100%;}
 }
 
 .about-images .img {
@@ -47,36 +53,57 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px 30px;
+  @include phone-xs{
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 .expertise-head {
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 500;
+  @include tab{
+    font-size: 18px;margin-bottom: 5px;
+    line-height: normal;
+  }
+  @include phone-xs{
+    font-size: 16px;margin-bottom: 0px;
+  }
+}
+.about-progress{
+  &.ant-progress-line .ant-progress-rail,
+  &.ant-progress-line .ant-progress-track {height: 20px !important;}
+  @include tab{
+    &.ant-progress-line .ant-progress-rail,
+    &.ant-progress-line .ant-progress-track {height:15px !important;}
+  }
+  @include phone-xs{
+    &.ant-progress-line .ant-progress-rail,
+    &.ant-progress-line .ant-progress-track {height:11px !important;}
+  }
 }
 
 .exp-name {
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 30px;
   color: $text-333;
 }
 
 .exp-percent {
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 30px;
   color: $text-999;
 }
-
 
 .about-main .sec-heading,
 .expertise .sec-heading {
   margin-bottom: 30px;
+   @include phone{margin-bottom: 18px;}
 }
 
 .about-main .cmn-text {
   max-width: 570px;
+  @include tab{max-width: 100%;}
+
 }
 
 .certi-wrapper {
@@ -84,10 +111,12 @@
   justify-content: center;
   align-items: center;
   gap: 30px;
+  @include phone-xs{gap: 10px;}
 }
 
 .certi-block {
   width: calc(100% / 3 - (2 * 30px) / 3);
+  @include phone-xs{ width: calc(100% / 3 - (2 * 10px) / 3);}
 }
 
 .certi-block img {
@@ -95,10 +124,14 @@
   height: auto;
   border: 13px solid $textBlack;
   cursor: pointer;
+  @include phone-xs{
+    border-width: 6px;
+  }
 }
 
 .certificate .sec-heading {
   margin-bottom: 40px;
+  @include phone-xs{margin-bottom: 30px;}
 }
 
 .slbCloseBtn {
@@ -119,6 +152,9 @@
   gap: 30px;
   align-items: center;
   flex-wrap:wrap;
+  @include tab{
+    flex-direction: column;
+  }
 }
 
 /* IMAGE */
@@ -126,44 +162,35 @@
   position: relative;
   @include  divLayout(2, 30px);
   height:570px;
-
   img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    @include image-fill;
     border-radius: 40px;
+  }
+  @include tab{
+    width: 100%;
+  }
+  @include phone-xs{
+    height: 370px;
   }
 }
 
 /* EXPERIENCE BADGE */
 .exp-badge {
-  position: absolute;
-  bottom: 32px;
-  right: 20px;
-  background:$redColor;
-  color: #fff;
-  min-width: 222px;
-  min-height: 200px;
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  position: absolute;bottom: 32px;right: 20px;background:$redColor;
+  color: #fff;min-width: 222px;min-height: 200px;border-radius: 20px;display: flex;flex-direction: column;justify-content: center;align-items: center;
   text-align: center;
-
-  .exp-num {
-    font-size: 80px;
-    font-weight: 500;
-    line-height: 60px;
-
-    span{
-      font-size:50px;
-    }
+  .exp-num {font-size: 80px;font-weight: 500;line-height: 60px;
+    span{font-size:50px;}
   }
-
-  .exp-text {
-    font-size: 18px;
-    font-weight: 500;
+  .exp-text {font-size: 18px;font-weight: 500;}
+  @include phone-xs{
+    .exp-num {
+      font-size:55px;line-height: 1.2;
+      span{font-size: 34px;}
+    }
+    .exp-text{font-size: 14px;}
+    min-width: fit-content;min-height: auto;padding: 10% 5%;
+    bottom: 20px;
   }
 }
 
@@ -171,6 +198,10 @@
   @include  divLayout(2, 30px);
   .wrapper{
     max-width:570px;
+  }
+  @include tab{
+    width: 100%;
+    .wrapper{max-width:100%;}
   }
 }
 
@@ -203,30 +234,14 @@
 }
 
 .about-shipping{
-  .red-btn{
-    border-radius: 50px;
-    height: 50px;
-    display: flex;
-    min-width: 200px;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .mini-title{
-    margin-bottom:17px;
-  }
-
-  .cmn-text{
-    margin-top:30px;
-  }
+  .red-btn{border-radius: 50px;height: 50px;display: flex;min-width: 200px;align-items: center;justify-content: center;}
+  .mini-title{margin-bottom:17px;}
+  .cmn-text{margin-top:30px;}
 }
 
 .shipping-mid{
-  display:flex;
-  align-items:center;
-  width:100%;
-  justify-content: space-between;
-  margin-top:75px;
-  margin-bottom:30px;
+  display:flex; align-items:center; width:100%; justify-content: space-between; margin-top:75px; margin-bottom:30px;
+  @include phone-xs{
+    flex-direction: column;margin-top:50px;align-items: flex-start;gap: 25px;
+  }
 }
-
