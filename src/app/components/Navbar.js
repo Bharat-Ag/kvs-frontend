@@ -112,7 +112,7 @@ export default function Navbar() {
                   );
                 })}
                 <li>
-                  <Link href="/contact" onClick={() => setIsNavOpen(false)} className="white-outline-btn inq-nav rounded-full flex-box d-flex d-sm-blocks mx-auto">
+                  <Link href="/contact" onClick={() => setIsNavOpen(false)} className="white-outline-btn inq-nav rounded-full flex-box d-flex d-sm-none mx-auto">
                     Inquiry Now
                   </Link>
                 </li>
