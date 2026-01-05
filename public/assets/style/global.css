@@ -86,9 +86,15 @@ input {
 
 .sec-heading {
   font-weight: 500;
-  font-size: 50px;
+  font-size: 43px;
   color: #444;
-  line-height: 75px;
+  line-height: 60px;
+}
+@media (min-width: 1400px) {
+  .sec-heading {
+    font-size: 50px;
+    line-height: 75px;
+  }
 }
 @media (max-width: 767px) {
   .sec-heading {
@@ -222,6 +228,12 @@ a.white-outline-btn:hover {
   padding-top: 30px;
   padding-inline: 20px;
 }
+@media (max-width: 991px) {
+  .banner-blk .h-title {
+    font-size: 35px;
+    line-height: 1.5;
+  }
+}
 @media (max-width: 767px) {
   .banner-blk {
     padding-top: 20px;
@@ -247,14 +259,13 @@ a.white-outline-btn:hover {
        object-fit: cover;
   }
   .banner-blk .h-title {
-    font-size: 35px;
-    line-height: 1.5;
+    font-size: 30px;
   }
 }
 @media (max-width: 480px) {
   .banner-blk .h-title {
-    line-height: 1;
-    padding-bottom: 9px;
+    line-height: 29px;
+    font-size: 22px;
   }
 }
 

@@ -42,7 +42,8 @@ input {border: 0;resize: none;outline: none;background: transparent;padding: 0;}
 .red-btn {background: $redColor;color: $textWhite;}
 .red-btn:hover {background: $redDarkColor;}
 .sec-heading {
-  font-weight: 500; font-size: 50px; color: $text-333; line-height: 75px;
+  font-weight: 500; font-size: 43px; color: $text-333; line-height: 60px;
+  @include screen-up-1400 {font-size: 50px;  line-height: 75px;}
   @include phone{font-size: 43px;line-height: 56px;}
   @include phone-xr{font-size: 25px;line-height: 35px;}
 }
@@ -97,6 +98,11 @@ a.white-outline-btn {
 
 .banner-blk {
   position: relative;color: $textWhite;padding-top: 30px;padding-inline: 20px;
+
+
+  @include tab{
+    .h-title {font-size: 35px;line-height: 1.5;}
+  }
   @include phone{
     padding-top: 20px; padding-inline: 14px;
     .banner{border-radius: 20px;}
@@ -109,10 +115,11 @@ a.white-outline-btn {
         height: 100%; position: absolute; inset: 0;object-fit: cover;
       }
     }
-    .h-title {font-size: 35px;line-height: 1.5;}
+
+    .h-title {font-size: 30px;}
   }
   @include phone-xr{
-    .h-title{line-height: 1;padding-bottom: 9px;}
+    .h-title{line-height: 29px; font-size: 22px;}
   }
 }
 
