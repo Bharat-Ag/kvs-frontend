@@ -292,6 +292,7 @@ a.white-outline-btn:hover {
   left: 50%;
   z-index: 1;
   transform: translate(-50%, -50%);
+  width: calc(100% - 40px);
 }
 
 .h-title {
@@ -602,6 +603,14 @@ nav .nav-item .ant-dropdown-trigger {
     left: -48px;
     top: 20px;
   }
+}
+@media (max-width: 1199px) and (max-width: 375px) {
+  nav .menu_close_btn {
+    left: 11px;
+    top: 10px;
+  }
+}
+@media (max-width: 1199px) {
   nav .mid-navlinks {
     position: fixed;
     right: -100%;
