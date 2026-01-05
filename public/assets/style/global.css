@@ -611,7 +611,7 @@ nav .nav-item .ant-dropdown-trigger {
   nav .mid-navlinks {
     position: fixed;
     right: -100%;
-    height: calc(100dvh - 40px);
+    height: calc(100dvh - 112px);
     display: flex;
     top: 0;
     width: 272px;
@@ -621,7 +621,7 @@ nav .nav-item .ant-dropdown-trigger {
     z-index: 10;
     background-color: rgba(0, 0, 0, 0.5098039216);
     border-radius: 15px;
-    top: 20px;
+    top: 100px;
     -webkit-backdrop-filter: blur(5px);
             backdrop-filter: blur(5px);
   }
@@ -1627,4 +1627,16 @@ nav .nav-open .mid-navlinks {
   align-items: center;
   justify-content: center;
   z-index: 9999;
+}
+
+.service-card .icns img {
+  transform: scale(1);
+  transition: transform 0.3s ease-in-out;
+}
+.service-card:hover .icns img {
+  transform: scale(0.8);
+}
+
+.ant-spin .ant-spin-dot-item {
+  background: #cc0001 !important;
 }/*# sourceMappingURL=global.css.map */
