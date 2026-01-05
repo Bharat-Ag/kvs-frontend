@@ -150,6 +150,7 @@ a.white-outline-btn {
   top: 50%;
   left: 50%;z-index: 1;
   transform: translate(-50%, -50%);
+  width: calc(100% - 40px);
 }
 
 .h-title {
@@ -302,7 +303,9 @@ nav {
     }
   }
   @include mini-desktop{
-    .menu_close_btn { background-color: #fff; color: #000; border-radius: 50%; width: 30px; height: 30px; left: -48px; top: 20px; }
+    .menu_close_btn { background-color: #fff; color: #000; border-radius: 50%; width: 30px; height: 30px; left: -48px; top: 20px; 
+      @include phone-5s{left: 11px; top: 10px;}
+    }
     .mid-navlinks{
       position: fixed;
       right: -100%;
