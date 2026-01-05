@@ -36,13 +36,19 @@
 }
 
 .img-bottom {
-  width: 334px;
-  height: 334px;
   position: absolute;
-  bottom: 6px;
   transform: translateX(-50%);
   border: 6px solid $textWhite;
-  right: -140px;
+  width: 306px;
+  height: 289px;
+  bottom: -22px;
+  right: -122px;
+  @include screen-up-1400{
+    right: -119px;
+    bottom: -40px;
+    width: 334px;
+    height: 334px;
+  }
 }
 
 .about .mini-title {
@@ -96,7 +102,11 @@
 
 .about-main .sec-heading,
 .expertise .sec-heading {
-  margin-bottom: 30px;
+  margin-bottom: 24px;
+  @include screen-up-1400{
+    margin-bottom: 30px;
+  }
+
    @include phone{margin-bottom: 18px;}
 }
 

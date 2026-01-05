@@ -43,13 +43,21 @@
 }
 
 .img-bottom {
-  width: 334px;
-  height: 334px;
   position: absolute;
-  bottom: 6px;
   transform: translateX(-50%);
   border: 6px solid #fff;
-  right: -140px;
+  width: 306px;
+  height: 289px;
+  bottom: -22px;
+  right: -122px;
+}
+@media (min-width: 1400px) {
+  .img-bottom {
+    right: -119px;
+    bottom: -40px;
+    width: 334px;
+    height: 334px;
+  }
 }
 
 .about .mini-title {
@@ -113,7 +121,13 @@
 
 .about-main .sec-heading,
 .expertise .sec-heading {
-  margin-bottom: 30px;
+  margin-bottom: 24px;
+}
+@media (min-width: 1400px) {
+  .about-main .sec-heading,
+  .expertise .sec-heading {
+    margin-bottom: 30px;
+  }
 }
 @media (max-width: 767px) {
   .about-main .sec-heading,
