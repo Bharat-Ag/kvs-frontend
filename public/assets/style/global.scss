@@ -118,9 +118,6 @@ a.white-outline-btn {
 
     .h-title {font-size: 30px;}
   }
-  @include phone-xr{
-    .h-title{line-height: 29px; font-size: 22px;}
-  }
 }
 
 .banner img {
@@ -307,6 +304,7 @@ nav {
       position: fixed;
       right: -100%;
       height: calc(100dvh - 112px); display: flex; top: 0; width: 272px; flex-direction: column; padding: 20px; transition: right .4s; z-index: 10; background-color: #00000082; border-radius: 15px; top: 100px; backdrop-filter: blur(5px);
+      @include phone-xs{top: 92px;}
     }
     .navbar-nav{
       flex-direction: column;gap: 20px;

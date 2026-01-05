@@ -262,12 +262,6 @@ a.white-outline-btn:hover {
     font-size: 30px;
   }
 }
-@media (max-width: 480px) {
-  .banner-blk .h-title {
-    line-height: 29px;
-    font-size: 22px;
-  }
-}
 
 .banner img {
   width: 100%;
@@ -625,6 +619,13 @@ nav .nav-item .ant-dropdown-trigger {
     -webkit-backdrop-filter: blur(5px);
             backdrop-filter: blur(5px);
   }
+}
+@media (max-width: 1199px) and (max-width: 575px) {
+  nav .mid-navlinks {
+    top: 92px;
+  }
+}
+@media (max-width: 1199px) {
   nav .navbar-nav {
     flex-direction: column;
     gap: 20px;
