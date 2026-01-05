@@ -1622,4 +1622,34 @@ nav .nav-open .mid-navlinks {
   align-items: center;
   justify-content: center;
   z-index: 9999;
+}
+
+.sider-cmn-bar .swiper-wrapper {
+  padding-bottom: 40px;
+}
+.sider-cmn-bar > .swiper-pagination-bullets, .sider-cmn-bar .swiper-pagination-horizontal.swiper-pagination-bullets {
+  width: 170px;
+  display: flex;
+  position: absolute;
+  left: 50%;
+  align-items: center;
+  transform: translateX(-50%);
+  border-radius: 8px;
+  height: 3px;
+  background: #999999;
+}
+.sider-cmn-bar > .swiper-pagination-bullets .swiper-pagination-bullet, .sider-cmn-bar .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  flex-grow: 1;
+  position: relative;
+  z-index: 2;
+  border-radius: 5px;
+  height: 5px;
+  margin-inline: 0;
+  background: transparent;
+  transition: 0.4s ease;
+}
+.sider-cmn-bar > .swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagination-bullet-active, .sider-cmn-bar .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  position: relative;
+  z-index: 2;
+  background: #cc0001;
 }/*# sourceMappingURL=global.css.map */

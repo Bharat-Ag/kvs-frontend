@@ -805,3 +805,20 @@ main{
   justify-content: center;
   z-index: 9999;
 }
+
+.sider-cmn-bar{
+  .swiper-wrapper{padding-bottom: 40px;}
+  & > .swiper-pagination-bullets, .swiper-pagination-horizontal.swiper-pagination-bullets {
+    width: 170px;display: flex;position: absolute;
+    left: 50%;align-items: center;
+    transform: translateX(-50%);border-radius: 8px; height: 3px; background: #999999;
+    .swiper-pagination-bullet{
+      flex-grow: 1;position: relative; z-index: 2;border-radius: 5px; height: 5px; margin-inline: 0;background: transparent;
+      transition: .4s ease;
+      &.swiper-pagination-bullet-active{
+        position: relative;
+        z-index: 2;background: $redColor;
+      }
+    }
+  }
+}

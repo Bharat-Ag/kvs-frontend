@@ -8,9 +8,10 @@ import "../../public/assets/style/home.css";
 import { Tabs } from "antd";
 import FaqCollapse from "./components/FaqCollapse";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay } from "swiper/modules";
+import { Navigation, Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css/pagination";
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { FaqExport, FaqGeneral, FaqImport, FeaturedProd, OurServicesData, ProductList, Testimonials, testimonialsData } from "./arrayData";
@@ -59,7 +60,6 @@ export default function Home() {
       description: "Dependable road logistics ensuring smooth inland and cross-border transportation.",
     },
   ];
-
 
   const filteredProducts = useMemo(() => {
     return products?.filter((item) => item.name.toLowerCase().includes(searchProduct.toLowerCase()));
@@ -123,18 +123,27 @@ export default function Home() {
             <div className="ft-prod-listing">
               <Swiper
                 loop={true}
+                modules={[Pagination]}
+                className="sider-cmn-bar"
                 spaceBetween={30}
+                slidesPerGroup={1}
+                pagination={{
+                  clickable: true,
+                }}
                 breakpoints={{
                   0: {
                     slidesPerView: 2,
+                    slidesPerGroup: 2,
                     spaceBetween: 14,
                   },
                   640: {
                     slidesPerView: 2,
+                    slidesPerGroup: 2,
                     spaceBetween: 20,
                   },
                   1024: {
                     slidesPerView: 3,
+                    slidesPerGroup: 3,
                   },
                 }}
               >
@@ -288,26 +297,31 @@ export default function Home() {
             <div className="product-listing">
               <div className="search-box">
                 <input type="text" placeholder="Search Product / Search Categories" className="w-100" value={searchProduct} onChange={(e) => setSearchProduct(e.target.value)} />
-
                 <div className="icon d-flex">
                   <SearchIcon />
                 </div>
               </div>
               <div className="product-listing-inner">
                 <Swiper
-                  modules={[Autoplay]}
-                  loop={true}
+                  modules={[Autoplay, Pagination]}
+                  className="sider-cmn-bar"
+                  loop={false}
                   spaceBetween={30}
+                  pagination={{ clickable: true }}
+                  slidesPerGroup={1}
                   breakpoints={{
                     320: {
                       slidesPerView: 2,
                       spaceBetween: 14,
+                      slidesPerGroup: 2,
                     },
                     640: {
                       slidesPerView: 3,
+                      slidesPerGroup: 3,
                     },
                     1024: {
                       slidesPerView: 4,
+                      slidesPerGroup: 4,
                     },
                   }}
                 >
@@ -316,7 +330,9 @@ export default function Home() {
                       <SwiperSlide key={idx}>
                         <div className="product-card">
                           <div className="icns">
-                            <img src={item.image} alt={item.name} />
+                            <Link href={`/product/${item.slug}`}>
+                              <img src={item.image} alt={item.name} />
+                            </Link>
                           </div>
                           <h4 className="product-title">{item.name}</h4>
                           <p className="product-desc">{item.description}</p>
