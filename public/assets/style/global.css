@@ -1612,4 +1612,14 @@ nav .nav-open .mid-navlinks {
 .prodcDt-inner-sktl.skel-inner .button-plgc .ant-skeleton-section .ant-skeleton-paragraph > li {
   height: 50px;
   border-radius: 10px;
+}
+
+.global-loader {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
 }/*# sourceMappingURL=global.css.map */

@@ -28,7 +28,7 @@ export default function Home() {
 
   useEffect(() => {
     fetchProducts().catch(() => toast.error("Failed to fetch products"));
-  }, [fetchProducts, loading]);
+  }, [fetchProducts]);
 
   const sliderData = [
     {
@@ -60,14 +60,6 @@ export default function Home() {
     },
   ];
 
-  useEffect(() => {
-    if (swiperInstance && prevRef.current && nextRef.current) {
-      swiperInstance.params.navigation.prevEl = prevRef.current;
-      swiperInstance.params.navigation.nextEl = nextRef.current;
-      swiperInstance.navigation.init();
-      swiperInstance.navigation.update();
-    }
-  }, [swiperInstance]);
 
   const filteredProducts = useMemo(() => {
     return products?.filter((item) => item.name.toLowerCase().includes(searchProduct.toLowerCase()));
@@ -102,6 +94,10 @@ export default function Home() {
             }}
             onSwiper={setSwiperInstance}
             className="mySwiper"
+            onBeforeInit={(swiper) => {
+              swiper.params.navigation.prevEl = prevRef.current;
+              swiper.params.navigation.nextEl = nextRef.current;
+            }}
           >
             {sliderData.map((slide, idx) => (
               <SwiperSlide key={idx}>
@@ -202,7 +198,7 @@ export default function Home() {
                                   <h4>{item?.name}</h4>
                                   <h5>{item?.company}</h5>
                                 </div>
-                                <div className="incx position-absolute " style={{right:0}}>
+                                <div className="incx position-absolute " style={{ right: 0 }}>
                                   <RightDQouted />
                                 </div>
                               </div>
