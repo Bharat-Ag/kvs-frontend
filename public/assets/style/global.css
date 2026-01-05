@@ -86,15 +86,9 @@ input {
 
 .sec-heading {
   font-weight: 500;
-  font-size: 43px;
+  font-size: 50px;
   color: #444;
-  line-height: 60px;
-}
-@media (min-width: 1400px) {
-  .sec-heading {
-    font-size: 50px;
-    line-height: 75px;
-  }
+  line-height: 75px;
 }
 @media (max-width: 991px) {
   .sec-heading {
@@ -110,7 +104,7 @@ input {
 }
 @media (max-width: 480px) {
   .sec-heading {
-    font-size: 27px;
+    font-size: 25px;
     line-height: 35px;
   }
 }
