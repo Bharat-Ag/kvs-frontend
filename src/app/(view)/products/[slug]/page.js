@@ -18,6 +18,7 @@ import Image from "next/image";
 import CTA from "@/app/components/CTA";
 import InquiryModal from "@/app/components/InquiryModal";
 import { useProductDetailStore } from "@/app/store/productDetailStore";
+import { ProdDxtsSktl, ProdGalleySktl } from "@/app/components/Loaders";
 
 export default function ProductDetails() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
@@ -45,87 +46,97 @@ export default function ProductDetails() {
         <div className="container">
           <div className="row">
             <div className="col-md-6">
-              <Swiper
-                loop={imageGallery.length > 1}
-                spaceBetween={10}
-                thumbs={{
-                  swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null,
-                }}
-                modules={[FreeMode, Thumbs]}
-                className="mySwiper2"
-              >
-                {imageGallery.map((img, index) => (
-                  <SwiperSlide key={index}>
-                    <div className="img-box">
-                      <Image src={img} alt={`product-${index}`} width={570} height={570} className="w-100 h-100" />
-                    </div>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
+              {loading ? (<ProdGalleySktl />)
+                : (<>
+                  <Swiper
+                    loop={imageGallery.length > 1}
+                    spaceBetween={10}
+                    thumbs={{
+                      swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null,
+                    }}
+                    modules={[FreeMode, Thumbs]}
+                    className="mySwiper2"
+                  >
+                    {imageGallery.map((img, index) => (
+                      <SwiperSlide key={index}>
+                        <div className="img-box">
+                          <Image src={img} alt={`product-${index}`} width={570} height={570} className="w-100 h-100" />
+                        </div>
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
 
-              <Swiper
-                onSwiper={setThumbsSwiper}
-                loop={imageGallery.length > 1}
-                spaceBetween={10}
-                slidesPerView={3}
-                freeMode
-                watchSlidesProgress
-                modules={[FreeMode, Thumbs]}
-                className={`mySwiperSmall ${imageGallery.length > 3 ? "" : "small-mode-swiper"}`}
-              >
-                {imageGallery.map((img, index) => (
-                  <SwiperSlide key={index}>
-                    <div className="img-box">
-                      <Image src={img} alt={`thumb-${index}`} width={120} height={120} className="w-100 h-100" />
-                    </div>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
+                  <Swiper
+                    onSwiper={setThumbsSwiper}
+                    loop={imageGallery.length > 1}
+                    spaceBetween={10}
+                    slidesPerView={3}
+                    freeMode
+                    watchSlidesProgress
+                    modules={[FreeMode, Thumbs]}
+                    className={`mySwiperSmall ${imageGallery.length > 3 ? "" : "small-mode-swiper"}`}
+                  >
+                    {imageGallery.map((img, index) => (
+                      <SwiperSlide key={index}>
+                        <div className="img-box">
+                          <Image src={img} alt={`thumb-${index}`} width={120} height={120} className="w-100 h-100" />
+                        </div>
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
+                </>)
+              }
             </div>
             <div className="col-md-6">
               <div className="dt-shows-box">
-                <span className="sec-heading text-black">{product?.name}</span>
-                <div className="table-row">
-                  <div className="table-grid">
-                    <div className="tb-col">
-                      <span className="label">Material</span>
-                      <p>{product?.material?.replaceAll(",", ", ")}</p>
-                    </div>
+                {loading ? (<ProdDxtsSktl />)
+                  : (
+                    <>
+                      <span className="sec-heading text-black">{product?.name}</span>
+                      <div className="table-row">
+                        <div className="table-grid">
+                          <div className="tb-col">
+                            <span className="label">Material</span>
+                            <p>{product?.material?.replaceAll(",", ", ")}</p>
+                          </div>
 
-                    <div className="tb-col">
-                      <span className="label">Standard / Thickness</span>
-                      <p>{product?.standard_thickness}</p>
-                    </div>
+                          <div className="tb-col">
+                            <span className="label">Standard / Thickness</span>
+                            <p>{product?.standard_thickness}</p>
+                          </div>
 
-                    <div className="tb-col">
-                      <span className="label">Color</span>
-                      <p>{product?.color}</p>
-                    </div>
+                          <div className="tb-col">
+                            <span className="label">Color</span>
+                            <p>{product?.color}</p>
+                          </div>
 
-                    <div className="tb-col">
-                      <span className="label">Size</span>
-                      <p>{product?.size}</p>
-                    </div>
+                          <div className="tb-col">
+                            <span className="label">Size</span>
+                            <p>{product?.size}</p>
+                          </div>
 
-                    <div className="tb-col">
-                      <span className="label">Packaging</span>
-                      <p>{product?.packaging} in Carton</p>
-                    </div>
+                          <div className="tb-col">
+                            <span className="label">Packaging</span>
+                            <p>{product?.packaging} in Carton</p>
+                          </div>
 
-                    <div className="tb-col">
-                      <span className="label">Application</span>
-                      <p>{product?.application}</p>
-                    </div>
+                          <div className="tb-col">
+                            <span className="label">Application</span>
+                            <p>{product?.application}</p>
+                          </div>
 
-                    <div className="tb-col">
-                      <span className="label">MOQ</span>
-                      <p>{product?.moq}</p>
-                    </div>
-                  </div>
-                </div>
-                <button className="flex-box rounded-full red-outline-btn" onClick={() => setOpenMdl(true)}>
-                  Inquiry Now
-                </button>
+                          <div className="tb-col">
+                            <span className="label">MOQ</span>
+                            <p>{product?.moq}</p>
+                          </div>
+                        </div>
+                      </div>
+                      <button className="flex-box rounded-full red-outline-btn" onClick={() => setOpenMdl(true)}>
+                        Inquiry Now
+                      </button>
+                    </>
+                  )
+                }
               </div>
             </div>
           </div>

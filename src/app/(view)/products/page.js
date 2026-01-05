@@ -8,6 +8,7 @@ import PageTitle from "@/app/components/PageTitle";
 import Link from "next/link";
 import "../../../../public/assets/style/product.css";
 import { useProductStore } from "@/app/store/useProductStore";
+import { ProdxCardSkel } from "@/app/components/Loaders";
 
 export default function Products() {
   const { products, fetchProducts, loading } = useProductStore();
@@ -24,22 +25,24 @@ export default function Products() {
       <section className="pg-product-section paddB">
         <div className="inner-area">
           <div className="container">
-            {loading && <p>Loading products...</p>}
-
             <div className="pg-product-listing">
-              {products.map((item) => (
-                <div className="product-card" key={item.id}>
-                  <Link href={`/products/${item.slug}`} className="imglink">
-                    <div className="icns">
-                      <img src={item.image} alt={item.name} />
+              {loading ? (<ProdxCardSkel totalFields={7} className="product-grid-row product-skel" />)
+                : (
+                  products.map((item) => (
+                    <div className="product-card" key={item.id}>
+                      <Link href={`/products/${item.slug}`} className="imglink">
+                        <div className="icns">
+                          <img src={item.image} alt={item.name} />
+                        </div>
+                      </Link>
+                      <h4 className="product-title">{item.name}</h4>
+                      <Link href={`/products/${item.slug}`} className="flex-box rounded-full red-outline-btn w-100">
+                        Inquiry Now
+                      </Link>
                     </div>
-                  </Link>
-                  <h4 className="product-title">{item.name}</h4>
-                  <Link href={`/products/${item.slug}`} className="flex-box rounded-full red-outline-btn w-100">
-                    Inquiry Now
-                  </Link>
-                </div>
-              ))}
+                  ))
+                )
+              }
             </div>
           </div>
         </div>

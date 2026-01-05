@@ -10,6 +10,7 @@ import { Poppins } from "next/font/google";
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import HydrationLoader from "./components/HydrationLoader";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -23,6 +24,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={poppins.variable}>
         <StyleProvider hashPriority="high">
+          <HydrationLoader />
           <Navbar />
           <main>{children}</main>
           <Footer />
