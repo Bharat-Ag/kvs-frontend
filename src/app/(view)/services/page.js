@@ -21,7 +21,7 @@ export default function Services() {
           <div className="container">
             <div className="service-listing">
                {OurServicesData?.map((service, idx) => (
-                    <Link href={`/services/${service?.url}`} className="service-list">
+                    <Link href={`/services/${service?.url}`} key={idx} className="service-list">
                       <div className="service-card">
                         <div className="icns">
                           <Image src={service?.icons} alt={service?.title} />

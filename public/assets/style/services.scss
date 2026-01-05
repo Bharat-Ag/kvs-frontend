@@ -1,16 +1,19 @@
 @import "mixin.scss";
 
 .services-blk{
-  .service-listing{
-      display:flex;
-      gap:30px;
-      align-items:center;
-      flex-wrap:wrap;
-  }
+    .service-listing{
+        display:flex;
+        gap:30px;
+        align-items:center;
+        margin-top: 0;
+        flex-wrap:wrap;
+    }
 
-  .service-list{
-       width: calc(100% / 3 - (2 * 30px) / 3);
-  }
+    .service-list {
+        width: calc(100% / 3 - (2 * 30px) / 3);
+        @include phone{width: calc(100% / 2 - (1 * 30px) / 2);}
+        @include phone-xs{width: 100%}
+    }
 }
 
 .service-vertical-tabs {
@@ -24,12 +27,32 @@
             &.active,
             &:active,
             &:hover{color: $text-222;}
+            @include tab{height: 60px;}
+            @include phone-xr{height: 50px;font-size: 16px;}
         }
         .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn{color: #fff;}
     }
 
-    &.ant-tabs-left>.ant-tabs-nav .ant-tabs-tab+.ant-tabs-tab { margin-top: 0; height: 80px; width: 270px; }
+    &.ant-tabs-left>.ant-tabs-nav .ant-tabs-tab+.ant-tabs-tab {
+        margin-top: 0; height: 80px; width: 270px;
+        @include tab{height: 60px;}
+        @include phone-xr{height: 50px;font-size: 16px;}
+    }
     &.ant-tabs-left >.ant-tabs-content-holder >.ant-tabs-content>.ant-tabs-tabpane{padding-left: 30px;}
+    @include mini-desktop{
+        &.ant-tabs{
+            flex-direction: column;gap: 30px;
+        }
+        &.ant-tabs-left >.ant-tabs-nav .ant-tabs-nav-list{
+            flex-direction: row;overflow: auto; scrollbar-width: none;
+        }
+    }
+    @include tab{
+        &.ant-tabs{
+            .ant-tabs-tabpane{padding-left: 0;}
+        }
+        &.ant-tabs-left >.ant-tabs-content-holder >.ant-tabs-content>.ant-tabs-tabpane{padding-left: 0;}
+    }
 }
 
 .service-content{
@@ -37,9 +60,13 @@
     .service-image {
         max-width: 370px; height: auto; border-radius: 40px; overflow: hidden; min-width: 370px;
         img{@include image-fill;}
+        @include phone-xr{max-width: 100%;min-width: auto;}
     }
     .service-text{
         h2{margin-bottom: 10px;}
         p{font-size: 16px;color: $text-666;line-height: 28px;}
+    }
+    @include tab{
+        flex-direction: column;
     }
 }
