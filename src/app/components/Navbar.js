@@ -63,10 +63,10 @@ export default function Navbar() {
               </Link>
             </div>
             <div className="mid-navlinks">
-              <button class="menu_close_btn d-block d-xl-none position-absolute" onClick={() => {
+              <button className="menu_close_btn d-block d-xl-none position-absolute" onClick={() => {
                   setIsNavOpen(false);
                 }}>
-                <i class="fa-solid fa-xmark"></i>
+                <i className="fa-solid fa-xmark"></i>
               </button>
               <ul className="navbar-nav ">
                 {navLinks.map((link, idx) => {

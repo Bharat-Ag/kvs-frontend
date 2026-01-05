@@ -218,7 +218,7 @@ const handleSubmit = async (values, { setSubmitting, resetForm, setErrors }) => 
                   className="refresh-captcha no-antd-style"
                   onClick={generateCaptcha}
                 >
-                  <i class="fa-solid fa-arrows-rotate"></i>
+                  <i className="fa-solid fa-arrows-rotate"></i>
                 </Button>
               </div>
             </div>

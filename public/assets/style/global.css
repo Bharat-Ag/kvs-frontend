@@ -1120,6 +1120,16 @@ nav .nav-open .mid-navlinks {
   width: 100%;
   padding-bottom: 60px;
 }
+@media (max-width: 991px) {
+  .testimonial-content {
+    margin-top: 22px;
+  }
+}
+@media (max-width: 767px) {
+  .testimonial-content {
+    padding: 35px;
+  }
+}
 
 .testimonial-content-inner {
   position: relative;
@@ -1448,4 +1458,92 @@ nav .nav-open .mid-navlinks {
   .captcha-block span, .captcha-block button {
     margin-top: 17px;
   }
+}
+
+.blogxCard-loader .ld-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 70px 30px;
+}
+.blogxCard-loader .ld-col {
+  width: calc(100% / 3 - (3 - 1) * 30px / 3);
+}
+.blogxCard-loader .skel-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.blogxCard-loader .skel-inner .ant-skeleton.img-plgc .ant-skeleton-paragraph li {
+  height: 370px;
+  overflow: hidden;
+  border-radius: 40px;
+  margin-bottom: 30px;
+}
+.blogxCard-loader .skel-inner .ant-skeleton.para-skl1 .ant-skeleton-paragraph li {
+  height: 25px;
+}
+
+.blogxDt-loader .skel-inner {
+  max-width: 590px;
+  display: flex;
+  flex-direction: column;
+}
+.blogxDt-loader .skel-inner .img-plgc.ant-skeleton .ant-skeleton-section .ant-skeleton-paragraph > li {
+  min-height: 320px;
+  border-radius: 25px;
+  margin-bottom: 20px;
+}
+.blogxDt-loader .skel-inner .para-skl1.ant-skeleton .ant-skeleton-section .ant-skeleton-paragraph > li {
+  min-height: 30px;
+  margin-bottom: 20px;
+}
+
+.product-skel .ld-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.product-skel .ld-col {
+  width: calc(100% / 4 - (4 - 1) * 30px / 4);
+}
+.product-skel .skel-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.product-skel .skel-inner .ant-skeleton.img-plgc .ant-skeleton-paragraph li {
+  height: 320px;
+  overflow: hidden;
+  border-radius: 40px;
+}
+.product-skel .skel-inner .ant-skeleton.para-skl1 {
+  margin-block: 10px 5px;
+}
+.product-skel .skel-inner .ant-skeleton.para-skl1 .ant-skeleton-paragraph li {
+  height: 25px;
+  margin-inline: auto;
+}
+.product-skel .skel-inner .ant-skeleton.para-skl .ant-skeleton-paragraph li {
+  height: 35px;
+  margin-inline: auto;
+}
+
+.productGalley-inner-sktl.skel-inner .ant-skeleton .ant-skeleton-section .ant-skeleton-paragraph > li {
+  height: 525px;
+  border-radius: 40px;
+}
+
+.prodcDt-inner-sktl.skel-inner .title-plgc .ant-skeleton-section .ant-skeleton-paragraph > li {
+  height: 35px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+.prodcDt-inner-sktl.skel-inner .table-plgc .ant-skeleton-section .ant-skeleton-paragraph > li {
+  height: 145px;
+  border-radius: 10px;
+  margin-bottom: 18px;
+}
+.prodcDt-inner-sktl.skel-inner .button-plgc .ant-skeleton-section .ant-skeleton-paragraph > li {
+  height: 50px;
+  border-radius: 10px;
 }/*# sourceMappingURL=global.css.map */

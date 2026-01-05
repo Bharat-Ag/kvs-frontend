@@ -1,26 +1,20 @@
 import { create } from "zustand";
 import ApiService from "@/app/service/api/api.services";
 
-const TTL = 5 * 60 * 1000; // 5 minutes
-
 export const useBlogStore = create((set, get) => ({
   blogs: [],
   loading: false,
   error: null,
-  fetchedAt: null,
 
   /**
-   * Fetch blogs from API with optional TTL bypass
-   * @param force - If true, ignores TTL and fetches fresh data
+   * Fetch blogs from API
+   * Always fetches fresh data on every call
    */
-  fetchBlogs: async (force = false) => {
-    const { blogs, fetchedAt, loading } = get();
+  fetchBlogs: async () => {
+    const { loading } = get();
 
-    if (loading) return; // already fetching
-    // skip fetch only if TTL valid and not forced
-    if (!force && blogs.length && fetchedAt && Date.now() - fetchedAt < TTL) {
-      return;
-    }
+    // prevent duplicate requests
+    if (loading) return;
 
     set({ loading: true, error: null });
 
@@ -29,7 +23,6 @@ export const useBlogStore = create((set, get) => ({
 
       set({
         blogs: response?.data || [],
-        fetchedAt: Date.now(),
         loading: false,
       });
     } catch (err) {
@@ -41,9 +34,9 @@ export const useBlogStore = create((set, get) => ({
   },
 
   /**
-   * Manual refresh: forces new data from backend
+   * Manual refresh (same as fetch now)
    */
   forceRefresh: async () => {
-    await get().fetchBlogs(true); // force fetch ignores TTL
+    await get().fetchBlogs();
   },
 }));

@@ -542,6 +542,12 @@ nav {
     width:100%;
     padding-bottom: 60px;
   }
+  @include tab{
+    margin-top: 22px;
+  }
+  @include phone{
+      padding: 35px;
+  }
 }
 
 .testimonial-content-inner{
@@ -739,5 +745,86 @@ main{
   @include phone-xr{
     font-size: 30px;line-height: 1;display: inline-block;
     span,button{margin-top: 17px;}
+  }
+}
+
+.blogxCard-loader{
+  .ld-row{display: flex;flex-wrap: wrap;gap: 70px 30px;}
+  .ld-col{@include divLayout(3 , 30px);}
+  .skel-inner{display: flex; flex-direction: column; gap: 9px;
+    .ant-skeleton{
+      &.img-plgc{
+        .ant-skeleton-paragraph{
+          li{height: 370px; overflow: hidden; border-radius: 40px;margin-bottom: 30px;}
+        }
+      }
+      &.para-skl1{
+        .ant-skeleton-paragraph{
+          li{height: 25px;}
+        }
+      }
+    }
+  }
+}
+.blogxDt-loader{
+  .skel-inner{
+    max-width: 590px;display: flex;flex-direction: column;
+    .img-plgc{
+      &.ant-skeleton .ant-skeleton-section .ant-skeleton-paragraph >li{min-height: 320px;border-radius: 25px;margin-bottom: 20px;}
+    }
+    .para-skl1{
+      &.ant-skeleton .ant-skeleton-section .ant-skeleton-paragraph >li{min-height: 30px;margin-bottom: 20px;}
+    }
+  }
+}
+
+.product-skel{
+ .ld-row{display: flex;flex-wrap: wrap;gap:30px;}
+  .ld-col{
+    @include divLayout(4 , 30px)
+  }
+  .skel-inner{
+    display: flex; flex-direction: column; gap: 9px;
+    .ant-skeleton{
+      &.img-plgc{
+        .ant-skeleton-paragraph{
+          li{height: 320px;overflow: hidden;border-radius: 40px;}
+        }
+      }
+      &.para-skl1{margin-block:10px 5px;
+        .ant-skeleton-paragraph{
+          li{height: 25px;margin-inline:auto;}
+        }
+      }
+      &.para-skl{
+        .ant-skeleton-paragraph{
+          li{height: 35px;margin-inline:auto;}
+        }
+      }
+    }
+  }
+}
+
+.productGalley-inner-sktl{
+  &.skel-inner{
+    .ant-skeleton{
+      .ant-skeleton-section .ant-skeleton-paragraph >li{
+          height: 525px;border-radius: 40px;
+      }      
+    }
+  }
+}
+
+.prodcDt-inner-sktl{
+  &.skel-inner{
+    .title-plgc{
+      .ant-skeleton-section .ant-skeleton-paragraph >li{height:35px;border-radius:10px;margin-bottom: 12px;}
+    }
+    .table-plgc{
+      .ant-skeleton-section .ant-skeleton-paragraph >li{height:145px;border-radius:10px;margin-bottom: 18px;}
+    }
+    .button-plgc{
+      .ant-skeleton-section .ant-skeleton-paragraph >li{height:50px;border-radius:10px;}
+    }
   }
 }
