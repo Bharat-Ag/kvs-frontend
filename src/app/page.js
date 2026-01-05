@@ -330,13 +330,13 @@ export default function Home() {
                       <SwiperSlide key={idx}>
                         <div className="product-card">
                           <div className="icns">
-                            <Link href={`/product/${item.slug}`}>
+                            <Link href={`/products/${item.slug}`}>
                               <img src={item.image} alt={item.name} />
                             </Link>
                           </div>
                           <h4 className="product-title">{item.name}</h4>
                           <p className="product-desc">{item.description}</p>
-                          <Link href={`/product/${item.slug}`} className="flex-box rounded-full red-outline-btn w-100">
+                          <Link href={`/products/${item.slug}`} className="flex-box rounded-full red-outline-btn w-100">
                             Inquiry Now
                           </Link>
                         </div>
