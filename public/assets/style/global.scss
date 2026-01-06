@@ -386,7 +386,7 @@ nav {
   .service-title{font-weight: 500;font-size: 20px;color: $text-333;margin-bottom: 20px;}
   .service-desc{font-size: 16px;color: $text-666;line-height: 24px;}
   @include phone-xr{
-    .icns{img{max-width: 80px;margin-bottom:6px;height: auto;}}
+    .icns{img{max-width: 70px;margin-bottom:6px;height: auto;}}
     .service-title{font-size: 18px;margin-bottom: 10px;}
     .service-desc{font-size: 14px;line-height: 24px;}
   }
@@ -456,10 +456,13 @@ nav {
     .content-card{
       position: absolute;height: fit-content;bottom:30px;background: #00000066;backdrop-filter: blur(20px);border-radius: 30px;width: calc(100% - 60px);padding: 30px;
       @include phone-xr{
-        bottom: 22px;border-radius: 27px;padding: 21px;width: calc(100% - 44px);left: 22px;
+        border-radius: 27px;padding: 21px;position: static;width: 100%;
       }
     }
-    .testm-card{background: #444;padding: 30px;}
+    .testm-card{
+      background: transparent;padding: 30px;
+      @include phone-xr{display: flex;align-items: flex-end;padding: 20px;}
+    }
     .testm-desc{font-style: Italic;font-size: 16px;color: #fff;margin-bottom: 22px;;}
     .bgImg{
       position: absolute;inset: 0;
@@ -847,5 +850,13 @@ main{
 .ant-spin {
   .ant-spin-dot-item{
     background: #cc0001 !important;
+  }
+}
+
+.services-nav{
+  gap: 5px;
+  @include mini-desktop{
+    justify-content: center;
+    .navLink{width: fit-content;}
   }
 }

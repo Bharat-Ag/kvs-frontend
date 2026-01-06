@@ -99,9 +99,13 @@
   }
 }
 @media (max-width: 480px) {
+  .inr-slid {
+    min-height: 550px;
+    padding-left: 23px;
+  }
   .inr-slid .sec-heading {
     padding-right: 23px;
-    font-size: 30px;
+    font-size: 45px;
     line-height: 1.3;
   }
   .inr-slid .red-btn {
@@ -109,7 +113,7 @@
     font-size: 14px;
   }
   .inr-slid .hero-para {
-    font-size: 14px;
+    margin-block: 15px;
   }
 }
 

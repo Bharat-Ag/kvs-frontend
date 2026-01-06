@@ -35,9 +35,10 @@
         .hero-para { font-size: 15px; margin-block: 8px 15px; }
     }
     @include phone-xr{
-        .sec-heading{padding-right: 23px;font-size: 30px;line-height: 1.3;}
+        min-height: 550px;padding-left: 23px;
+        .sec-heading{padding-right: 23px;font-size:45px;line-height: 1.3;}
         .red-btn{height: 45px;font-size: 14px;}
-        .hero-para{font-size: 14px;}
+        .hero-para{margin-block: 15px;}
     }
 }
 

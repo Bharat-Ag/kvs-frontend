@@ -810,7 +810,7 @@ nav .nav-open .mid-navlinks {
 }
 @media (max-width: 480px) {
   .service-listing .icns img {
-    max-width: 80px;
+    max-width: 70px;
     margin-bottom: 6px;
     height: auto;
   }
@@ -992,16 +992,22 @@ nav .nav-open .mid-navlinks {
 }
 @media (max-width: 480px) {
   .testim-sliderbox .content-card {
-    bottom: 22px;
     border-radius: 27px;
     padding: 21px;
-    width: calc(100% - 44px);
-    left: 22px;
+    position: static;
+    width: 100%;
   }
 }
 .testim-sliderbox .testm-card {
-  background: #444;
+  background: transparent;
   padding: 30px;
+}
+@media (max-width: 480px) {
+  .testim-sliderbox .testm-card {
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+  }
 }
 .testim-sliderbox .testm-desc {
   font-style: Italic;
@@ -1679,4 +1685,17 @@ nav .nav-open .mid-navlinks {
 
 .ant-spin .ant-spin-dot-item {
   background: #cc0001 !important;
+}
+
+.services-nav {
+  gap: 5px;
+}
+@media (max-width: 1199px) {
+  .services-nav {
+    justify-content: center;
+  }
+  .services-nav .navLink {
+    width: -moz-fit-content;
+    width: fit-content;
+  }
 }/*# sourceMappingURL=global.css.map */

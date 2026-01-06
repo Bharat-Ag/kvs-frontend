@@ -88,10 +88,10 @@ export default function Home() {
           <Swiper
             modules={[Navigation, Autoplay]}
             loop={true}
-            autoplay={{
-              delay: 3000,
-              disableOnInteraction: false,
-            }}
+            // autoplay={{
+            //   delay: 3000,
+            //   disableOnInteraction: false,
+            // }}
             onSwiper={setSwiperInstance}
             className="mySwiper"
             onBeforeInit={(swiper) => {
@@ -106,9 +106,7 @@ export default function Home() {
                   <div className="content position-relative">
                     <h2 className="sec-heading">{slide.title}</h2>
                     <p className="hero-para">{slide.description}</p>
-                    <Link href="#" className="red-btn rounded-full flex-box">
-                      Contact us
-                    </Link>
+                    <Link href="/contact" className="red-btn rounded-full flex-box">Contact us</Link>
                   </div>
                 </div>
               </SwiperSlide>
@@ -181,6 +179,9 @@ export default function Home() {
               <div className="col-md-6">
                 <div className="right-area">
                   <div className="testim-sliderbox">
+                    <div className="bgImg">
+                      <Image src={assets.TestimImg} alt={""} />
+                    </div>
                     <Swiper
                       modules={[Autoplay]}
                       loop={true}
@@ -193,10 +194,6 @@ export default function Home() {
                       {testimonialsData?.map((item, idx) => (
                         <SwiperSlide key={idx}>
                           <div className="testm-card position-relative">
-                            <div className="bgImg">
-                              {/* <Image src={item?.coverArt} alt={item?.name} /> */}
-                              <Image src={assets.TestimImg} alt={item?.name} />
-                            </div>
                             <div className="content-card">
                               <p className="testm-desc">{item?.message}</p>
                               <div className="infor position-relative">
